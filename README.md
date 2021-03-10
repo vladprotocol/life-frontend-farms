@@ -1,4 +1,4 @@
-# 🥞 Life Frontend
+# 🧛 Life Frontend
 
 http://vlad.finance/
 

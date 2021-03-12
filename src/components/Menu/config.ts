@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.vlad.finance/',
+        href: 'https://swap-testnet.bitdeep.dev/',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.vlad.finance/#/pool',
+        href: 'https://swap-testnet.bitdeep.dev/#/pool',
       },
     ],
   },

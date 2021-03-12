@@ -1,11 +1,12 @@
 {
-  "name": "goose-frontend",
-  "version": "0.1.0",
+  "name": "life-frontend-farms",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-mainnet": "react-scripts build && rm -rf ../mainnet/* && mv ./build/* ../mainnet/ && mv ../testnet/CNAME-MAINNET ../mainnet/CNAME",
+    "build-testnet": "react-scripts build && rm -rf ../testnet/* && mv ./build/* ../testnet/ && mv ../testnet/CNAME-TESTNET ../testnet/CNAME",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",

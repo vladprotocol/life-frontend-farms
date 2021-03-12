@@ -37,7 +37,7 @@ const farms: FarmConfig[] = [
   {
     pid: 2,
     risk: 3,
-    lpSymbol: 'VLAD-WBNB LP',
+    lpSymbol: 'VLAD-BNB LP',
     lpAddresses: {
       97: '0xe782FB7d09277397cFd5238bDB79295F478F4340',
       56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
@@ -51,7 +51,7 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.busd,
   },
   {
-    pid: 2,
+    pid: 3,
     risk: 3,
     lpSymbol: 'VLAD-BUSD LP',
     lpAddresses: {
@@ -86,7 +86,7 @@ const farms: FarmConfig[] = [
     pid: 5,
     risk: 5,
     isTokenOnly: true,
-    lpSymbol: 'LIFE',
+    lpSymbol: 'VLAD',
     lpAddresses: {
       97: '0x7C5165968051061A626f4370065A0d8Afdd4C959',
       56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019', // LIFE-BUSD LP

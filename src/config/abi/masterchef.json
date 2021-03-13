@@ -110,6 +110,63 @@
       },
       {
         "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SetDevAddress",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "SetFeeAddress",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "goosePerBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdateEmissionRate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "internalType": "uint256",
         "name": "pid",
         "type": "uint256"
@@ -154,6 +211,20 @@
   },
   {
     "inputs": [],
+    "name": "feeAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
     "name": "life",
     "outputs": [
       {
@@ -182,7 +253,7 @@
   },
   {
     "inputs": [],
-    "name": "feeAddress",
+    "name": "owner",
     "outputs": [
       {
         "internalType": "address",
@@ -195,13 +266,19 @@
     "constant": true
   },
   {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "address",
+        "internalType": "contract IBEP20",
         "name": "",
         "type": "address"
+      }
+    ],
+    "name": "poolExistence",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -242,6 +319,11 @@
         "internalType": "uint16",
         "name": "depositFeeBP",
         "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "depositMax",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -358,6 +440,11 @@
         "type": "uint16"
       },
       {
+        "internalType": "uint256",
+        "name": "_depositMax",
+        "type": "uint256"
+      },
+      {
         "internalType": "bool",
         "name": "_withUpdate",
         "type": "bool"
@@ -384,6 +471,11 @@
         "internalType": "uint16",
         "name": "_depositFeeBP",
         "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_depositMax",
+        "type": "uint256"
       },
       {
         "internalType": "bool",

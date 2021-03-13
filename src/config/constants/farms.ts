@@ -44,7 +44,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'BNB',
     tokenAddresses: {
-      97: '0x0709f0f5450eb39Fbb1CA729c47151158e9484Dd',
+      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
@@ -60,7 +60,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'BNB',
     tokenAddresses: {
-      97: '0x0709f0f5450eb39Fbb1CA729c47151158e9484Dd',
+      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
@@ -88,8 +88,8 @@ const farms: FarmConfig[] = [
     isTokenOnly: true,
     lpSymbol: 'VLAD',
     lpAddresses: {
-      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
-      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019', // LIFE-BUSD LP
+      97: '0x2e727e92E5354c92705d5f305A7cea59E62c929B', // VLAD-BUSD LP
+      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
     },
     tokenSymbol: 'LIFE',
     tokenAddresses: {

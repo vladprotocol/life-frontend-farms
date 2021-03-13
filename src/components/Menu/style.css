@@ -1,0 +1,18 @@
+nav {
+    margin-top: 40px!important;
+}
+
+nav ~ div > div:nth-child(1) {
+	position: relative!important;
+	height: 170vh;
+}
+
+
+nav ~ div > div:nth-child(1) > div:nth-child(2) {
+	display: none;
+}
+
+
+nav ~ div > div:nth-child(2) {
+	margin-left: 0px;
+}

@@ -8,10 +8,10 @@ nav ~ div > div:nth-child(1) {
 }
 
 
-nav ~ div > div:nth-child(1) > div:nth-child(2) {
+/*nav ~ div > div:nth-child(1) > div:nth-child(2) {
 	display: none;
 }
-
+*/
 
 nav ~ div > div:nth-child(2) {
 	margin-left: 0px;

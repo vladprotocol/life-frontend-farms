@@ -31,24 +31,24 @@ const farms: FarmConfig[] = [
       97: '0x0709f0f5450eb39Fbb1CA729c47151158e9484Dd',
       56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
   },
   {
     pid: 2,
     risk: 3,
-    lpSymbol: 'WBNB-VLAD LP',
+    lpSymbol: 'VLAD-BNB LP',
     lpAddresses: {
       97: '0x1742064d963d474a3d05d96509a2c2BB359D5581',
       56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
     },
-    tokenSymbol: 'BNB',
+    tokenSymbol: 'VLAD',
     tokenAddresses: {
       97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
   },
   {
     pid: 3,
@@ -58,7 +58,7 @@ const farms: FarmConfig[] = [
       97: '0x2e727e92E5354c92705d5f305A7cea59E62c929B',
       56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
     },
-    tokenSymbol: 'BNB',
+    tokenSymbol: 'VLAD',
     tokenAddresses: {
       97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
@@ -76,7 +76,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'BNB',
     tokenAddresses: {
-      97: '0x0709f0f5450eb39Fbb1CA729c47151158e9484Dd',
+      97: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,

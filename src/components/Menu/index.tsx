@@ -86,6 +86,10 @@ const SocialLink = styled.a`
   decoration="none";
 `
 
+const FooterCopyRight = styled.div`
+  color: white;
+`
+
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
@@ -177,7 +181,7 @@ const Menu = (props) => {
           <RankingLink link="https://nomics.com/assets/vlad-vlad-finance" name="Nomics" />
           <RankingLink link="https://www.livecoinwatch.com/price/VladFinance-VLAD" name="LiveCoinWatch" />
         </LiveLinkGroup>
-        <div>© Vlad Finance. All Rights Reserved</div>
+        <FooterCopyRight>© Vlad Finance. All Rights Reserved</FooterCopyRight>
       </Footer>
     </div>
   )

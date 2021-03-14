@@ -25,7 +25,7 @@ const Sticky = styled.div`
   top: 0px;
 `
 
-const Head = styled.div`
+const Head = styled.a`
   color: #5ca269;
   padding: 14px;
   display: inline-block;
@@ -102,7 +102,7 @@ const Menu = (props) => {
   return (
     <div>
       <Sticky>
-        <Head>VLAD.FINANCE</Head>
+        <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
         <SocialHeader>
           <SocialHeaderLink
             link="https://t.me/VladFinanceOfficial"

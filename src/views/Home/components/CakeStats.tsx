@@ -40,7 +40,7 @@ const CakeStats = () => {
   return (
     <StyledCakeStats>
       <CardBody>
-        <Heading size="xl" mb="24px">
+        <Heading color="#5ca269" size="xl" mb="24px">
           {TranslateString(534, 'Life Stats')}
         </Heading>
         <Row>

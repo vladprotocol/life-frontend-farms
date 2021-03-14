@@ -14,11 +14,12 @@ import telegramLogo from './telegram.svg';
 import twitterLogo from './twitter.svg';
 import mediumLogo from './medium.svg';
 import vladLogo from './vlad-circle.png';
+import bgFooter from './bg-footer.jpg';
 
 const Sticky = styled.div`
   position: fixed;
   width: 100%;
-  background: #171717;
+  background: rgba(6, 31, 34);
   z-index: 111;
   height: 45px;
   top: 0px;
@@ -31,12 +32,14 @@ const Head = styled.div`
 `
 
 const Footer = styled.div`
-<<<<<<< HEAD
   height: 400px;
   background: #171717;
   width: 100%;
   text-align: center;
   padding: 20px;
+  background: url(${bgFooter}) no-repeat;
+  background-size: cover;
+  background-position: 100% 0;
 `
 
 const Social = styled.div`
@@ -55,7 +58,7 @@ const SocialFooter = styled(Social)`
 `
 
 const Container = styled.div`
-  margin-top: 40px;
+  margin-top: 45px;
 `
 
 const SocialImageHeader = styled.img`
@@ -139,7 +142,7 @@ const Menu = (props) => {
           setLang={setSelectedLanguage}
           cakePriceUsd={cakePriceUsd.toNumber()}
           links={config}
-          priceLink="https://www.coingecko.com/en/coins/goose-finance"
+          priceLink="https://www.coingecko.com/en/coins/vlad-finance"
           {...props}
         />
       </Container>

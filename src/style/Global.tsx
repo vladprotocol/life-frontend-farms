@@ -9,7 +9,8 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Kanit', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Metamorphous&amp;display=swap');
+    font-family: 'Montserrat', sans-serif;
   }
   body {
     background-color: ${({ theme }) => theme.colors.background};

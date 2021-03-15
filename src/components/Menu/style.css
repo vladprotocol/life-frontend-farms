@@ -8,6 +8,11 @@ nav ~ div > div:nth-child(1) {
 }
 
 
+nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div {
+	display: none;
+}
+
+
 nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button {
 	display: none;
 }

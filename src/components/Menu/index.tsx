@@ -103,7 +103,7 @@ const Menu = (props) => {
     <div>
       <Sticky>
         <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
-        <SocialHeader>
+        <SocialHeader>   
           <SocialHeaderLink
             link="https://t.me/VladFinanceOfficial"
             src={telegramLogo}
@@ -147,7 +147,7 @@ const Menu = (props) => {
         />
       </Container>
       <Footer>
-        <SocialFooter>
+        <SocialFooter>  
           <SocialFooterLink
             link="https://t.me/VladFinanceOfficial"
             src={telegramLogo}

@@ -92,7 +92,7 @@ const HistoryChart: React.FC = () => {
       ],
       xAxes: [
         {
-          ...axesStyles({ color: '#452A7A', lineHeight: 1 }),
+          ...axesStyles({ color: '#5ca269', lineHeight: 1 }),
         },
       ],
     },

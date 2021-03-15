@@ -30,6 +30,28 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/coffin',
   },
+  {
+    label: 'More',
+    icon: 'MoreIcon',
+    items: [
+      // {
+      //   label: 'Voting',
+      //   href: 'https://voting.pancakeswap.finance',
+      // },
+      {
+        label: "Github",
+        href: "https://github.com/vladprotocol",
+      },
+      // {
+      //   label: "Docs",
+      //   href: "https://goosedefi.gitbook.io/goose-finance/",
+      // },
+      {
+        label: "Blog",
+        href: "https://vlad-finance.medium.com/",
+      },
+    ],
+  },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',

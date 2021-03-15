@@ -20,4 +20,7 @@ nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > button {
 
 nav ~ div > div:nth-child(2) {
 	margin-left: 0px;
+	background: url(./bg-background.png) no-repeat;
+    background-size: cover;
+    background-position: 100% 0;
 }

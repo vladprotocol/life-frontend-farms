@@ -174,11 +174,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         <Text>{farm.depositFeeBP ? farm.depositFeeBP / 100 : '0'}%</Text>
       </Flex>
 
-      <Flex justifyContent="space-between">
-        <Text>Deposit Max:</Text>
-        <Text>{farm.depositMax ? farm.depositMax : '-'}</Text>
-      </Flex>
-
       <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
       <Divider />
       <ExpandableSectionButton

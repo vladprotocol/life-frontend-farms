@@ -15,7 +15,6 @@ interface FarmCardActionsProps {
   tokenName?: string
   pid?: number
   depositFeeBP?: number
-  depositMax?: number
 }
 
 const IconButtonWrapper = styled.div`
@@ -30,8 +29,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
   tokenBalance,
   tokenName,
   pid,
-  depositFeeBP,
-  depositMax,
+  depositFeeBP
 }) => {
   const TranslateString = useI18n()
   const { onStake } = useStake(pid)
@@ -46,7 +44,6 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
       onConfirm={onStake}
       tokenName={tokenName}
       depositFeeBP={depositFeeBP}
-      depositMax={depositMax}
     />,
   )
   const [onPresentWithdraw] = useModal(

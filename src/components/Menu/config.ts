@@ -26,11 +26,6 @@ const config: MenuEntry[] = [
     href: '/farms',
   },
   {
-    label: 'Coffin',
-    icon: 'PoolIcon',
-    href: '/coffin',
-  },
-  {
     label: 'More',
     icon: 'MoreIcon',
     items: [

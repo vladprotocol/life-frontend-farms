@@ -44,7 +44,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'VLAD',
     tokenAddresses: {
-      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
+      97: '0xa800D23CCc013d2cFF18665cCc4709d45D969841',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BNB,
@@ -60,7 +60,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'VLAD',
     tokenAddresses: {
-      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
+      97: '0xa800D23CCc013d2cFF18665cCc4709d45D969841',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
@@ -83,22 +83,37 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.busd,
   },
   {
-    pid: 5,
-    risk: 5,
-    isTokenOnly: true,
-    lpSymbol: 'VLAD',
+    pid: 6,
+    risk: 3,
+    lpSymbol: 'VLAD-BNB LP',
     lpAddresses: {
-      97: '0x2e727e92E5354c92705d5f305A7cea59E62c929B', // VLAD-BUSD LP
-      56: '0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
+      97: '0xb7419aC5Ff93Ac91047585A28CB37f765B1090B6',
+      56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
     },
-    tokenSymbol: 'LIFE',
+    tokenSymbol: 'VLAD',
     tokenAddresses: {
-      97: '0xd2Dcf4c9d85D48e12aE7c43D5280a2f99CE8CFA6',
-      56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
+      97: '0xa800D23CCc013d2cFF18665cCc4709d45D969841',
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
+    },
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
+  },
+  {
+    pid: 7,
+    risk: 3,
+    lpSymbol: 'VLAD-BUSD LP',
+    lpAddresses: {
+      97: '0x8B7635d524d1eD9518F3Dc32980E13584BB175d8',
+      56: '0x1b96b92314c44b159149f7e0303511fb2fc4774f',
+    },
+    tokenSymbol: 'VLAD',
+    tokenAddresses: {
+      97: '0xa800D23CCc013d2cFF18665cCc4709d45D969841',
+      56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
-  },
+  }
 ]
 
 export default farms

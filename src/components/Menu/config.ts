@@ -42,13 +42,13 @@ const config: MenuEntry[] = [
         label: "Github",
         href: "https://github.com/vladprotocol",
       },
-      // {
-      //   label: "Docs",
-      //   href: "https://goosedefi.gitbook.io/goose-finance/",
-      // },
       {
-        label: "Blog",
-        href: "https://vlad-finance.medium.com/",
+        label: "Overview",
+        href: "https://vlad-finance.medium.com/introducing-vlad-token-and-the-path-to-immortality-ce96990fdf66/",
+      },
+      {
+        label: "Roadmap",
+        href: "https://vlad-finance.medium.com/introducing-vlad-token-and-the-path-to-immortality-ce96990fdf66/",
       },
     ],
   },

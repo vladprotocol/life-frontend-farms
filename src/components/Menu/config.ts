@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://swap-testnet.bitdeep.dev/',
+        href: 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xdc5a820a4b37521b00b69a9b069553a463a89d85',
       },
       {
         label: 'Liquidity',
-        href: 'https://swap-testnet.bitdeep.dev/#/pool',
+        href: 'https://exchange.pancakeswap.finance/#/pool',
       },
     ],
   },

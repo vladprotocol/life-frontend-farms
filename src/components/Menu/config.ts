@@ -47,6 +47,16 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  {
+    label: 'DefiYeild Audit Coming Soon',
+    icon: 'NftIcon',
+    href: '#',
+  },
+  {
+    label: 'CERTIK Audit Coming Soon',
+    icon: 'NftIcon',
+    href: '#',
+  },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',

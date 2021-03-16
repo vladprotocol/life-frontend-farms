@@ -319,11 +319,6 @@
         "internalType": "uint16",
         "name": "depositFeeBP",
         "type": "uint16"
-      },
-      {
-        "internalType": "uint256",
-        "name": "depositMax",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -440,11 +435,6 @@
         "type": "uint16"
       },
       {
-        "internalType": "uint256",
-        "name": "_depositMax",
-        "type": "uint256"
-      },
-      {
         "internalType": "bool",
         "name": "_withUpdate",
         "type": "bool"
@@ -471,11 +461,6 @@
         "internalType": "uint16",
         "name": "_depositFeeBP",
         "type": "uint16"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_depositMax",
-        "type": "uint256"
       },
       {
         "internalType": "bool",

@@ -55,8 +55,8 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         <StyledLinkExternal
           href={
             isTokenOnly
-              ? `https://swap-testnet.bitdeep.dev/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-              : `https://swap-testnet.bitdeep.dev/#/add/${liquidityUrlPathParts}`
+              ? `https://pancakeswap.finance/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+              : `https://pancakeswap.finance/#/add/${liquidityUrlPathParts}`
           }
         >
           {lpLabel}

@@ -116,7 +116,7 @@ const Menu = (props) => {
         </audio>
         <SocialHeader>   
           <SocialHeaderLink
-            link="#"
+            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"
           />
@@ -165,7 +165,7 @@ const Menu = (props) => {
       <Footer>
         <SocialFooter>  
           <SocialFooterLink
-            link="#"
+            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"
           />

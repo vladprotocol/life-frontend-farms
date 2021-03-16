@@ -8,7 +8,7 @@ nav ~ div > div:nth-child(1) {
 }
 
 
-nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div {
+nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
 	display: none;
 }
 
@@ -23,4 +23,9 @@ nav ~ div > div:nth-child(2) {
 	background: url(./bg-background.png) no-repeat;
     background-size: cover;
     background-position: 100% 0;
+}
+
+audio {
+	filter: invert(84%);
+    height: 20px;
 }

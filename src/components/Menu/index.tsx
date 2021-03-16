@@ -87,7 +87,7 @@ const LiveLink = styled.a`
 `
 
 const SocialLink = styled.a`
-  decoration="none";
+  color="white";
 `
 
 const AudioArtist = styled.a`
@@ -123,7 +123,7 @@ const Menu = (props) => {
             alt="soundcloud"
           />
         <SocialHeader>   
-          <SocialHeaderLink
+          <LifeHeaderLink
             link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"
@@ -172,7 +172,7 @@ const Menu = (props) => {
       </Container>
       <Footer>
         <SocialFooter>  
-          <SocialFooterLink
+          <LifeFooterLink
             link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"
@@ -242,6 +242,17 @@ const SocialFooterLink = (value) => {
   )
 }
 
+const LifeFooterLink = (value) => {
+  const link = value.link
+  const src = value.src
+  const alt = value.alt
+  return (
+    <SocialLink target="_blank" href={link}>
+      <SocialImageFooter src={src} alt={alt} /> $LIFE
+    </SocialLink>
+  )
+}
+
 const SocialHeaderLink = (value) => {
   const link = value.link
   const src = value.src
@@ -249,6 +260,17 @@ const SocialHeaderLink = (value) => {
   return (
     <SocialLink target="_blank" href={link}>
       <SocialImageHeader src={src} alt={alt} />
+    </SocialLink>
+  )
+}
+
+const LifeHeaderLink = (value) => {
+  const link = value.link
+  const src = value.src
+  const alt = value.alt
+  return (
+    <SocialLink target="_blank" href={link}>
+      <SocialImageHeader src={src} alt={alt} /> $LIFE
     </SocialLink>
   )
 }

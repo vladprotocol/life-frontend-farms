@@ -87,7 +87,7 @@ const LiveLink = styled.a`
 `
 
 const SocialLink = styled.a`
-  color="white";
+  color:"white";
 `
 
 const AudioArtist = styled.a`
@@ -100,6 +100,14 @@ const FooterCopyRight = styled.div`
   color: white;
 `
 
+const InlineDiv = styled.div`
+  display: inline;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`
+
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
@@ -110,20 +118,22 @@ const Menu = (props) => {
     <div>
       <Sticky>
         <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
-        <AudioArtist>Listen to DJ Ezra live from Vladhalla!</AudioArtist>
-        <audio controls>
-          <source src= "./vlad.mp3" type="audio/mp3"/>
-            <track kind="captions" />
-        </audio>
-        <AudioArtist href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra
-        </AudioArtist>
+        <InlineDiv>
+          <AudioArtist>Listen to DJ Ezra live from Vladhalla!</AudioArtist>
+          <audio controls>
+            <source src= "./vlad.mp3" type="audio/mp3"/>
+              <track kind="captions" />
+          </audio>
+          <AudioArtist href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra
+          </AudioArtist>
+        </InlineDiv>
         <SocialHeaderLink
             link="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing"
             src={soundCloudLogo}
             alt="soundcloud"
           />
         <SocialHeader>   
-          <LifeHeaderLink
+          <SocialHeaderLink
             link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"
@@ -172,7 +182,7 @@ const Menu = (props) => {
       </Container>
       <Footer>
         <SocialFooter>  
-          <LifeFooterLink
+          <SocialFooterLink
             link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={vladLogo}
             alt="life"

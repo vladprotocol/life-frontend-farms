@@ -15,6 +15,7 @@ import twitterLogo from './twitter.svg';
 import mediumLogo from './medium.svg';
 import vladLogo from './vlad-circle.png';
 import bgFooter from './bg-footer.jpg';
+import soundCloudLogo from './soundcloud.png';
 
 const Sticky = styled.div`
   position: fixed;
@@ -92,7 +93,7 @@ const SocialLink = styled.a`
 const AudioArtist = styled.a`
   color: white;
   margin-left: 60px;
-  margin-right: 20px;
+  margin-right: 10px;
 `
 
 const FooterCopyRight = styled.div`
@@ -109,11 +110,18 @@ const Menu = (props) => {
     <div>
       <Sticky>
         <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
-        <AudioArtist target="_blank" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">Listen to DJ Ezra live from Vladhalla!</AudioArtist>
+        <AudioArtist>Listen to DJ Ezra live from Vladhalla!</AudioArtist>
         <audio controls>
           <source src= "./vlad.mp3" type="audio/mp3"/>
             <track kind="captions" />
         </audio>
+        <AudioArtist href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra
+        </AudioArtist>
+        <SocialHeaderLink
+            link="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing"
+            src={soundCloudLogo}
+            alt="soundcloud"
+          />
         <SocialHeader>   
           <SocialHeaderLink
             link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"

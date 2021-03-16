@@ -89,6 +89,11 @@ const SocialLink = styled.a`
   decoration="none";
 `
 
+const AudioArtist = styled.a`
+  color: white;
+  margin-left : 20px;
+`
+
 const FooterCopyRight = styled.div`
   color: white;
 `
@@ -103,6 +108,11 @@ const Menu = (props) => {
     <div>
       <Sticky>
         <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
+        <audio controls>
+          <source src= "./vlad.mp3" type="audio/mp3"/>
+            <track kind="captions" />
+        </audio>
+        <AudioArtist target="_blank" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">Dj Ezra</AudioArtist>
         <SocialHeader>   
           <SocialHeaderLink
             link="#"

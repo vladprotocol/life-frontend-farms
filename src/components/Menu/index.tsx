@@ -166,7 +166,7 @@ const Menu = (props) => {
           setLang={setSelectedLanguage}
           cakePriceUsd={cakePriceUsd.toNumber()}
           links={config}
-          priceLink="https://www.coingecko.com/en/coins/vlad-finance"
+          priceLink="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
           {...props}
         />
       </Container>

@@ -94,6 +94,9 @@ const AudioArtist = styled.a`
   color: white;
   margin-left: 60px;
   margin-right: 10px;
+  @media (max-width: 1300px) {
+    display: none;
+  }
 `
 
 const FooterCopyRight = styled.div`
@@ -102,8 +105,12 @@ const FooterCopyRight = styled.div`
 
 const InlineDiv = styled.div`
   display: inline;
-  @media (max-width: 1200px) {
-    display: none;
+`
+
+const AudioPlayer = styled.audio`
+  margin-right: 10px;
+  @media (max-width: 1300px) {
+    width: 50px;
   }
 `
 
@@ -119,10 +126,10 @@ const Menu = (props) => {
         <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
           <InlineDiv>
             <AudioArtist>Listen to DJ Ezra live from Vladhalla!</AudioArtist>
-            <audio controls>
+            <AudioPlayer controls>
               <source src= "./vlad.mp3" type="audio/mp3"/>
                 <track kind="captions" />
-            </audio>
+            </AudioPlayer>
             <AudioArtist href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra
             </AudioArtist>
             <SocialHeaderLink

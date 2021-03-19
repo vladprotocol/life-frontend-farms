@@ -128,7 +128,7 @@ const Menu = (props) => {
                     <div className="row">
                         <div className="tp-vlad">
                             <ul>
-                                <li><a href="{#}">Vlad.Finance</a></li>
+                                <li><a href="https://vlad.finance" target="_blank"  rel="noreferrer">Vlad.Finance</a></li>
                             </ul>
                         </div>
                         <div className="tp-audio">

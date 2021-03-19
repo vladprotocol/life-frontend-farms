@@ -121,56 +121,68 @@ const Menu = (props) => {
   const cakePriceUsd = usePriceCakeBusd()
 
   return (
-    <div>
-      <Sticky>
-        <Head href="https://vlad.finance" target="_blank">VLAD.FINANCE</Head>
-          <InlineDiv>
-            <AudioArtist>Listen to DJ Ezra live from Vladhalla!</AudioArtist>
-            <AudioPlayer controls>
-              <source src= "./vlad.mp3" type="audio/mp3"/>
-                <track kind="captions" />
-            </AudioPlayer>
-            <AudioArtist href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra
-            </AudioArtist>
-            <SocialHeaderLink
-              link="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing"
-              src={soundCloudLogo}
-              alt="soundcloud"
-          />
-        </InlineDiv>
-        <SocialHeader>   
-          <SocialHeaderLink
-            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
-            src={vladLogo}
-            alt="life"
-          />
-          <SocialHeaderLink
-            link="https://t.me/VladFinanceOfficial"
-            src={telegramLogo}
-            alt="telegram"
-          />
-          <SocialHeaderLink
-            link="https://vlad-finance.medium.com"
-            src={mediumLogo}
-            alt="medium"
-          />
-          <SocialHeaderLink
-            link="https://twitter.com/VladFinance"
-            src={twitterLogo}
-            alt="twitter"
-          />
-          <SocialHeaderLink
-            link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
-            src={bscscanLogo}
-            alt="bscscan"
-          />
-          <SocialHeaderLink
-            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
-            src={pancakeLogo}
-            alt="pancakeswap"
-          />
-        </SocialHeader>
-      </Sticky>
+    <div className="body-bg">
+        <section className="topsmnav-bg mb-4">
+            <div className="container">
+                <nav className="tp-sm-wrap">
+                    <div className="row">
+                        <div className="tp-vlad">
+                            <ul>
+                                <li><a href="{#}">Vlad.Finance</a></li>
+                            </ul>
+                        </div>
+                        <div className="tp-audio">
+                            <div className="tp-inner">
+                                <ul>
+                                    <li><a target="_blank" rel="noreferrer" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">Listen to DJ Ezra live from Vladhalla! 
+                                        <AudioPlayer controls>
+                                          <source src= "./vlad.mp3" type="audio/mpeg"/>
+                                            <track kind="captions" />
+                                        </AudioPlayer>
+                                        </a>
+                                    </li>
+                                    <li><a target="_blank" rel="noreferrer" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra <img src={soundCloudLogo} alt="soundcloud" className="img-fluid" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="top-sm-nav">
+                            <ul>
+                              <SocialHeaderLink
+                                link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+                                src={vladLogo}
+                                alt="life"
+                              />
+                              <SocialHeaderLink
+                                link="https://t.me/VladFinanceOfficial"
+                                src={telegramLogo}
+                                alt="telegram"
+                              />
+                              <SocialHeaderLink
+                                link="https://vlad-finance.medium.com"
+                                src={mediumLogo}
+                                alt="medium"
+                              />
+                              <SocialHeaderLink
+                                link="https://twitter.com/VladFinance"
+                                src={twitterLogo}
+                                alt="twitter"
+                              />
+                              <SocialHeaderLink
+                                link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                src={bscscanLogo}
+                                alt="bscscan"
+                              />
+                              <SocialHeaderLink
+                                link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                src={pancakeLogo}
+                                alt="pancakeswap"
+                              />
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
       <Container>
         <UikitMenu
           account={account}
@@ -274,9 +286,13 @@ const SocialHeaderLink = (value) => {
   const src = value.src
   const alt = value.alt
   return (
-    <SocialLink target="_blank" href={link}>
-      <SocialImageHeader src={src} alt={alt} />
-    </SocialLink>
+    <li>
+      <a href={link} target="_blank" rel="noreferrer">
+        <div>
+          <img src={src} className="img-fluid" alt={alt} />
+        </div>
+      </a>
+    </li>
   )
 }
 

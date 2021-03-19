@@ -148,34 +148,39 @@ const Menu = (props) => {
                         <div className="top-sm-nav">
                             <ul>
                               <SocialHeaderLink
-                                link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
-                                src={vladLogo}
-                                alt="life"
-                              />
-                              <SocialHeaderLink
                                 link="https://t.me/VladFinanceOfficial"
                                 src={telegramLogo}
-                                alt="telegram"
+                                alt="Telegram"
                               />
                               <SocialHeaderLink
                                 link="https://vlad-finance.medium.com"
                                 src={mediumLogo}
-                                alt="medium"
+                                alt="Medium"
                               />
                               <SocialHeaderLink
                                 link="https://twitter.com/VladFinance"
                                 src={twitterLogo}
-                                alt="twitter"
+                                alt="Twitter"
                               />
                               <SocialHeaderLink
                                 link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                src={vladLogo}
+                                alt="Vlad Token"
+                              />
+                              <SocialHeaderLink
+                                link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
                                 src={bscscanLogo}
-                                alt="bscscan"
+                                alt="Life Token"
                               />
                               <SocialHeaderLink
                                 link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
                                 src={pancakeLogo}
-                                alt="pancakeswap"
+                                alt="Buy Vlad"
+                              />
+                              <SocialHeaderLink
+                                link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+                                src={pancakeLogo}
+                                alt="Buy Life"
                               />
                             </ul>
                         </div>
@@ -201,34 +206,39 @@ const Menu = (props) => {
       <Footer>
         <SocialFooter>  
           <SocialFooterLink
-            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
-            src={vladLogo}
-            alt="life"
-          />
-          <SocialFooterLink
             link="https://t.me/VladFinanceOfficial"
             src={telegramLogo}
-            alt="telegram"
+            alt="Telegram"
           />
           <SocialFooterLink
             link="https://vlad-finance.medium.com"
             src={mediumLogo}
-            alt="medium"
+            alt="Medium"
           />
           <SocialFooterLink
             link="https://twitter.com/VladFinance"
             src={twitterLogo}
-            alt="twitter"
+            alt="Twitter"
           />
           <SocialFooterLink
             link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+            src={vladLogo}
+            alt="Vlad Token"
+          />
+          <SocialFooterLink
+            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={bscscanLogo}
-            alt="bscscan"
+            alt="Life Token"
           />
           <SocialFooterLink
             link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
             src={pancakeLogo}
-            alt="pancakeswap"
+            alt="Buy Vlad"
+          />
+          <SocialFooterLink
+            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+            src={pancakeLogo}
+            alt="Buy Life"
           />
         </SocialFooter>
         <Logo src={vladLogo} alt="vlad.finance" />
@@ -264,7 +274,7 @@ const SocialFooterLink = (value) => {
   const src = value.src
   const alt = value.alt
   return (
-    <SocialLink target="_blank" href={link}>
+    <SocialLink target="_blank" title={alt} href={link}>
       <SocialImageFooter src={src} alt={alt} />
     </SocialLink>
   )
@@ -287,7 +297,7 @@ const SocialHeaderLink = (value) => {
   const alt = value.alt
   return (
     <li>
-      <a href={link} target="_blank" rel="noreferrer">
+      <a href={link} title={alt} target="_blank" rel="noreferrer">
         <div>
           <img src={src} className="img-fluid" alt={alt} />
         </div>

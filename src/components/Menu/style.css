@@ -56,8 +56,12 @@ ul, li, a {
     margin-right: calc(var(--bs-gutter-x)/ -2);
     margin-left: calc(var(--bs-gutter-x)/ -2);
 }
-.top-sm-nav, .tp-vlad{
-    width: 25%;
+.tp-vlad{
+    width: 20%;
+    flex: 0 0 auto;
+}
+.top-sm-nav {
+    width: 30%;
     flex: 0 0 auto;
 }
 .tp-audio{
@@ -169,4 +173,22 @@ audio::-webkit-media-controls-play-button,
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1140px;
     }
+}
+
+@media(max-width:678px){
+	.body-bg nav{
+		top: 60px;
+	}
+}
+
+@media(max-width:678px){
+	nav ~ div > div:nth-child(2) {
+		margin-top: 120px;
+	}
+}
+
+@media(max-width:1200px) and (min-width:678px) {
+	.container {
+		width: 96%;
+	}
 }

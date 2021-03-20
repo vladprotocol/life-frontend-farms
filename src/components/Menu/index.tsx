@@ -42,6 +42,10 @@ const SocialFooter = styled(Social)`
   width: 100%;
   text-align: center;
   padding: 30px;
+
+  @media (max-width: 678px) {
+    padding: 0px;
+  }
 `
 
 const Container = styled.div`
@@ -56,6 +60,10 @@ const SocialImageHeader = styled.img`
 const SocialImageFooter = styled.img`
   width: 40px;
   margin: 10px;
+  @media (max-width: 678px) {
+      width: 32px;
+  }
+
 `
 
 const Logo = styled.img`
@@ -65,6 +73,11 @@ const Logo = styled.img`
 
 const LiveLinkGroup = styled.div`
   margin: 20px;
+
+  @media (max-width: 678px) {
+    margin: 20px 0;
+    font-size: 12px;
+  }
 `
 
 const LiveLink = styled.a`

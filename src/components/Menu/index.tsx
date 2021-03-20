@@ -17,20 +17,6 @@ import vladLogo from './vlad-circle.png';
 import bgFooter from './bg-footer.jpg';
 import soundCloudLogo from './soundcloud.png';
 
-const Sticky = styled.div`
-  position: fixed;
-  width: 100%;
-  background: rgba(6, 31, 34);
-  z-index: 111;
-  height: 45px;
-  top: 0px;
-`
-
-const Head = styled.a`
-  color: #5ca269;
-  padding: 14px;
-  display: inline-block;
-`
 
 const Footer = styled.div`
   height: 400px;
@@ -88,15 +74,6 @@ const LiveLink = styled.a`
 
 const SocialLink = styled.a`
   color:"white";
-`
-
-const AudioArtist = styled.a`
-  color: white;
-  margin-left: 60px;
-  margin-right: 10px;
-  @media (max-width: 1300px) {
-    display: none;
-  }
 `
 
 const FooterCopyRight = styled.div`
@@ -280,17 +257,6 @@ const SocialFooterLink = (value) => {
   )
 }
 
-const LifeFooterLink = (value) => {
-  const link = value.link
-  const src = value.src
-  const alt = value.alt
-  return (
-    <SocialLink target="_blank" href={link}>
-      <SocialImageFooter src={src} alt={alt} /> $LIFE
-    </SocialLink>
-  )
-}
-
 const SocialHeaderLink = (value) => {
   const link = value.link
   const src = value.src
@@ -303,16 +269,5 @@ const SocialHeaderLink = (value) => {
         </div>
       </a>
     </li>
-  )
-}
-
-const LifeHeaderLink = (value) => {
-  const link = value.link
-  const src = value.src
-  const alt = value.alt
-  return (
-    <SocialLink target="_blank" href={link}>
-      <SocialImageHeader src={src} alt={alt} /> $LIFE
-    </SocialLink>
   )
 }

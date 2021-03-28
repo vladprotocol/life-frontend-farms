@@ -8,6 +8,7 @@ import { usePriceCakeBusd } from 'state/hooks'
 import { Menu as UikitMenu } from '@pancakeswap-libs/uikit'
 import config from './config'
 import './style.css'
+<<<<<<< HEAD
 import bscscanLogo from './bscscan.png'
 import pancakeLogo from './pancake.png'
 import telegramLogo from './telegram.svg'
@@ -17,6 +18,18 @@ import vladLogo from './vlad-circle.png'
 import lifeLogo from './life.png'
 import bgFooter from './bg-footer.jpg'
 import soundCloudLogo from './soundcloud.png'
+=======
+import bscscanLogo from './bscscan.png';
+import pancakeLogo from './pancake.png';
+import telegramLogo from './telegram.svg';
+import twitterLogo from './twitter.svg';
+import mediumLogo from './medium.svg';
+import vladLogo from './vlad-circle.png';
+import lifeLogo from './life.png';
+import bgFooter from './bg-footer.jpg';
+import soundCloudLogo from './soundcloud.png';
+
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
 
 const Footer = styled.div`
   height: 400px;
@@ -61,8 +74,14 @@ const SocialImageFooter = styled.img`
   width: 40px;
   margin: 10px;
   @media (max-width: 678px) {
+<<<<<<< HEAD
     width: 32px;
   }
+=======
+      width: 32px;
+  }
+
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
 `
 
 const Logo = styled.img`
@@ -85,7 +104,11 @@ const LiveLink = styled.a`
 `
 
 const SocialLink = styled.a`
+<<<<<<< HEAD
   color: 'white';
+=======
+  color:"white";
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
 `
 
 const FooterCopyRight = styled.div`
@@ -111,6 +134,7 @@ const Menu = (props) => {
 
   return (
     <div className="body-bg">
+<<<<<<< HEAD
       <section className="topsmnav-bg mb-4">
         <div className="container">
           <nav className="tp-sm-wrap">
@@ -183,6 +207,74 @@ const Menu = (props) => {
           </nav>
         </div>
       </section>
+=======
+        <section className="topsmnav-bg mb-4">
+            <div className="container">
+                <nav className="tp-sm-wrap">
+                    <div className="row">
+                        <div className="tp-vlad">
+                            <ul>
+                                <li><a href="https://vlad.finance" target="_blank"  rel="noreferrer">Vlad.Finance</a></li>
+                            </ul>
+                        </div>
+                        <div className="tp-audio">
+                            <div className="tp-inner">
+                                <ul>
+                                    <li><a target="_blank" rel="noreferrer" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">Listen to DJ Ezra live from Vladhalla! 
+                                        <AudioPlayer controls>
+                                          <source src= "./vlad.mp3" type="audio/mpeg"/>
+                                            <track kind="captions" />
+                                        </AudioPlayer>
+                                        </a>
+                                    </li>
+                                    <li><a target="_blank" rel="noreferrer" href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing">More DJ Ezra <img src={soundCloudLogo} alt="soundcloud" className="img-fluid" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="top-sm-nav">
+                            <ul>
+                              <SocialHeaderLink
+                                link="https://t.me/VladFinanceOfficial"
+                                src={telegramLogo}
+                                alt="Telegram"
+                              />
+                              <SocialHeaderLink
+                                link="https://vlad-finance.medium.com"
+                                src={mediumLogo}
+                                alt="Medium"
+                              />
+                              <SocialHeaderLink
+                                link="https://twitter.com/VladFinance"
+                                src={twitterLogo}
+                                alt="Twitter"
+                              />
+                              <SocialHeaderLink
+                                link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                src={vladLogo}
+                                alt="Vlad Token"
+                              />
+                              <SocialHeaderLink
+                                link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+                                src={lifeLogo}
+                                alt="Life Token"
+                              />
+                              <SocialHeaderLink
+                                link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                src={pancakeLogo}
+                                alt="Buy Vlad"
+                              />
+                              <SocialHeaderLink
+                                link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+                                src={pancakeLogo}
+                                alt="Buy Life"
+                              />
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
       <Container>
         <UikitMenu
           account={account}
@@ -199,6 +291,7 @@ const Menu = (props) => {
         />
       </Container>
       <Footer>
+<<<<<<< HEAD
         <SocialFooter>
           <SocialFooterLink link="https://t.me/VladFinanceOfficial" src={telegramLogo} alt="Telegram" />
           <SocialFooterLink link="https://vlad-finance.medium.com" src={mediumLogo} alt="Medium" />
@@ -217,10 +310,45 @@ const Menu = (props) => {
             link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
             src={pancakeLogo}
             alt="Buy Vlad"
+=======
+        <SocialFooter>  
+          <SocialFooterLink
+            link="https://t.me/VladFinanceOfficial"
+            src={telegramLogo}
+            alt="Telegram"
+          />
+          <SocialFooterLink
+            link="https://vlad-finance.medium.com"
+            src={mediumLogo}
+            alt="Medium"
+          />
+          <SocialFooterLink
+            link="https://twitter.com/VladFinance"
+            src={twitterLogo}
+            alt="Twitter"
+          />
+          <SocialFooterLink
+            link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+            src={vladLogo}
+            alt="Vlad Token"
+          />
+          <SocialFooterLink
+            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+            src={lifeLogo}
+            alt="Life Token"
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
           />
           <SocialFooterLink
             link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
             src={pancakeLogo}
+<<<<<<< HEAD
+=======
+            alt="Buy Vlad"
+          />
+          <SocialFooterLink
+            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+            src={pancakeLogo}
+>>>>>>> cebd29e9b415f9b3f6511d55ed8c1ef096103b73
             alt="Buy Life"
           />
         </SocialFooter>

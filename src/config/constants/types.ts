@@ -77,10 +77,15 @@ export interface PoolConfig {
 
 export type Nft = {
   name: string
+  metadata: string
   description: string
   originalImage: string
   previewImage: string
+  fileType: string
   blurImage: string
   sortOrder: number
-  bunnyId: number
+  nftId: number
+  tokenAmount: number
+  nftFarmContract: string
+  nftContract: string
 }

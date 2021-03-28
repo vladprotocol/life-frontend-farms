@@ -12,14 +12,7 @@ interface TokenInputProps extends InputProps {
   depositFeeBP?: number
 }
 
-const TokenInput: React.FC<TokenInputProps> = ({
-  max,
-  symbol,
-  onChange,
-  onSelectMax,
-  value,
-  depositFeeBP = 0
-}) => {
+const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
   const TranslateString = useI18n()
   return (
     <StyledTokenInput>

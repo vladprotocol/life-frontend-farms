@@ -7,8 +7,8 @@ import { poolsConfig } from 'config/constants'
 import { PoolCategory } from 'config/constants/types'
 import ifo from 'config/abi/ifo.json'
 import erc20 from 'config/abi/erc20.json'
-import rabbitmintingfarm from 'config/abi/rabbitmintingfarm.json'
-import pancakeRabbits from 'config/abi/pancakeRabbits.json'
+import nftFarm from 'config/abi/NftFarm.json'
+import nft from 'config/abi/NFT.json'
 import lottery from 'config/abi/lottery.json'
 import lotteryTicket from 'config/abi/lotteryNft.json'
 import masterChef from 'config/abi/masterchef.json'
@@ -45,13 +45,13 @@ export const useCake = () => {
 }
 
 export const useRabbitMintingFarm = (address: string) => {
-  const rabbitMintingFarmAbi = (rabbitmintingfarm as unknown) as AbiItem
-  return useContract(rabbitMintingFarmAbi, address)
+  const nftMintingFarmAbi = (nftFarm as unknown) as AbiItem
+  return useContract(nftMintingFarmAbi, address)
 }
 
 export const usePancakeRabbits = (address: string) => {
-  const pancakeRabbitsAbi = (pancakeRabbits as unknown) as AbiItem
-  return useContract(pancakeRabbitsAbi, address)
+  const nftAbi = (nft as unknown) as AbiItem
+  return useContract(nftAbi, address)
 }
 
 export const useLottery = () => {

@@ -21,9 +21,14 @@ const config: MenuEntry[] = [
     ],
   },
   {
-    label: 'Farms',
+    label: 'Farm LIFE',
     icon: 'FarmIcon',
     href: '/farms',
+  },
+  {
+    label: 'Mint NFTs',
+    icon: 'NftIcon',
+    href: '/nft',
   },
   {
     label: 'More',
@@ -34,21 +39,21 @@ const config: MenuEntry[] = [
       //   href: 'https://voting.pancakeswap.finance',
       // },
       {
-        label: "Github",
-        href: "https://github.com/vladprotocol",
+        label: 'Github',
+        href: 'https://github.com/vladprotocol',
       },
       {
-        label: "Overview",
-        href: "https://vlad-finance.medium.com/introducing-vlad-token-and-the-path-to-immortality-ce96990fdf66/",
+        label: 'Overview',
+        href: 'https://vlad-finance.medium.com/introducing-vlad-token-and-the-path-to-immortality-ce96990fdf66/',
       },
-      {
-        label: "Roadmap",
-        href: "https://vlad-finance.medium.com/introducing-vlad-token-and-the-path-to-immortality-ce96990fdf66/",
-      },
+      // {
+      //   label: 'Roadmap',
+      //   href: 'https://vlad-finance.medium.com/roadmap/',
+      // },
     ],
   },
   {
-    label: 'DefiYeild Audit Coming Soon',
+    label: 'DefiYield Audit Coming Soon',
     icon: 'NftIcon',
     href: '#',
   },

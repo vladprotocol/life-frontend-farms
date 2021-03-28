@@ -2,7 +2,6 @@ import contracts from './contracts'
 import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
-
   {
     pid: 2,
     risk: 3,
@@ -83,7 +82,7 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
-  }
+  },
 ]
 
 export default farms

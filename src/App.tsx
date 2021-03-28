@@ -7,7 +7,6 @@ import { useFetchPublicData } from 'state/hooks'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
 import PageLoader from './components/PageLoader'
-import NftGlobalNotification from './views/Nft/components/NftGlobalNotification'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page'
@@ -17,7 +16,8 @@ const Farms = lazy(() => import('./views/Farms'))
 // const Pools = lazy(() => import('./views/Pools'))
 // const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
-// const Nft = lazy(() => import('./views/Nft'))
+const Nft = lazy(() => import('./views/Nft'))
+const Detail = lazy(() => import('./views/Detail'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -60,9 +60,10 @@ const App: React.FC = () => {
             {/* <Route path="/ifo"> */}
             {/*  <Ifos /> */}
             {/* </Route> */}
-            {/* <Route path="/nft"> */}
-            {/*  <Nft /> */}
-            {/* </Route> */}
+            <Route path="/nft">
+              <Nft />
+            </Route>
+            <Route path="/detail/:id" component={Detail} />
             {/* Redirect */}
             {/* <Route path="/staking"> */}
             {/*  <Redirect to="/pools" /> */}
@@ -75,7 +76,6 @@ const App: React.FC = () => {
           </Switch>
         </Suspense>
       </Menu>
-      <NftGlobalNotification />
     </Router>
   )
 }

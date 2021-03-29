@@ -17,6 +17,7 @@ const Farms = lazy(() => import('./views/Farms'))
 // const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 const Nft = lazy(() => import('./views/Nft'))
+const MyCollection = lazy(() => import('./views/MyCollection'))
 const Detail = lazy(() => import('./views/Detail'))
 
 // This config is required for number formating
@@ -62,6 +63,9 @@ const App: React.FC = () => {
             {/* </Route> */}
             <Route path="/nft">
               <Nft />
+            </Route>
+            <Route path="/my-collection">
+              <MyCollection />
             </Route>
             <Route path="/detail/:id" component={Detail} />
             {/* Redirect */}

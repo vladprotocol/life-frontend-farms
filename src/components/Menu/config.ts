@@ -31,6 +31,11 @@ const config: MenuEntry[] = [
     href: '/nft',
   },
   {
+    label: 'My NFT Collection',
+    icon: 'NftIcon',
+    href: '/my-collection',
+  },
+  {
     label: 'More',
     icon: 'MoreIcon',
     items: [

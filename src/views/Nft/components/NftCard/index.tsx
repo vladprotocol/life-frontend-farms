@@ -54,6 +54,12 @@ const Value = styled(Text)`
   font-weight: 600;
 `
 
+const ViewNft = styled(Text)`
+  @media (max-width: 1300px) {
+    font-size: 11px;
+  }
+`
+
 const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   const [state, setState] = useState({
     isLoading: false,
@@ -204,9 +210,9 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
         )}
         {isInitialized && loggedIn && MINTS > 0 && (
           <Button fullWidth onClick={() => history.push(`detail/${nftId}`)} mt="24px">
-            <Text>
+            <ViewNft>
               View NFT ({MINTED}/{MAX_MINT} MINTED)
-            </Text>
+            </ViewNft>
           </Button>
         )}
         {isInitialized && canBurnNft && walletOwnsNft && (

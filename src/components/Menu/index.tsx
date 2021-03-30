@@ -5,7 +5,7 @@ import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import { usePriceCakeBusd } from 'state/hooks'
-import { Menu as UikitMenu } from '@pancakeswap-libs/uikit'
+import { Menu as UikitMenu, Button } from '@pancakeswap-libs/uikit'
 import config from './config'
 import './style.css'
 import bscscanLogo from './bscscan.png'
@@ -17,7 +17,6 @@ import vladLogo from './vlad-circle.png'
 import lifeLogo from './life.png'
 import bgFooter from './bg-footer.jpg'
 import soundCloudLogo from './soundcloud.png'
-
 
 const Footer = styled.div`
   height: 400px;
@@ -100,15 +99,39 @@ const InlineDiv = styled.div`
 const AudioPlayer = styled.audio`
   margin-right: 10px;
   @media (max-width: 1300px) {
-    width: 50px;
+    width: 100px;
   }
 `
+
+const CustomButton = styled(Button)`
+  height: 22px;
+  margin-left: 10px;
+`
+
+const CustomI = styled.i`
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+`
+
+let vladValue = 0
 
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
   const cakePriceUsd = usePriceCakeBusd()
+
+  fetch('https://api.coingecko.com/api/v3/simple/price?ids=vlad-finance&vs_currencies=usd')
+    .then((res) => res.json())
+    .then(
+      (result) => {
+        vladValue = result['vlad-finance'].usd
+      },
+      (error) => {
+        vladValue = 0
+      },
+    )
 
   return (
     <div className="body-bg">
@@ -129,26 +152,13 @@ const Menu = (props) => {
                 <div className="tp-inner">
                   <ul>
                     <li>
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing"
-                      >
-                        Listen to DJ Ezra live from Vladhalla!
+                      <span>
+                        Mr. Oppo - Journey to Vladhalla
                         <AudioPlayer controls>
-                          <source src="./vlad.mp3" type="audio/mpeg" />
+                          <source src="./mr-oppo.mp3" type="audio/mpeg" />
                           <track kind="captions" />
                         </AudioPlayer>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://soundcloud.com/dj_ezra_is_back/dj-ezra-live-vladhalla-the/s-RaJwB2A8UaP?p=a&c=1&utm_source=other&utm_medium=text&utm_campaign=social_sharing"
-                      >
-                        More DJ Ezra <img src={soundCloudLogo} alt="soundcloud" className="img-fluid" />
-                      </a>
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -178,6 +188,12 @@ const Menu = (props) => {
                     src={pancakeLogo}
                     alt="Buy Life"
                   />
+                  <CustomButton variant="primary">
+                    <CustomI>
+                      <img src={vladLogo} className="img-fluid" alt="Vlad Token" />
+                    </CustomI>
+                    $ {vladValue}
+                  </CustomButton>
                 </ul>
               </div>
             </div>
@@ -200,22 +216,10 @@ const Menu = (props) => {
         />
       </Container>
       <Footer>
-        <SocialFooter>  
-          <SocialFooterLink
-            link="https://t.me/VladFinanceOfficial"
-            src={telegramLogo}
-            alt="Telegram"
-          />
-          <SocialFooterLink
-            link="https://vlad-finance.medium.com"
-            src={mediumLogo}
-            alt="Medium"
-          />
-          <SocialFooterLink
-            link="https://twitter.com/VladFinance"
-            src={twitterLogo}
-            alt="Twitter"
-          />
+        <SocialFooter>
+          <SocialFooterLink link="https://t.me/VladFinanceOfficial" src={telegramLogo} alt="Telegram" />
+          <SocialFooterLink link="https://vlad-finance.medium.com" src={mediumLogo} alt="Medium" />
+          <SocialFooterLink link="https://twitter.com/VladFinance" src={twitterLogo} alt="Twitter" />
           <SocialFooterLink
             link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
             src={vladLogo}
@@ -227,7 +231,7 @@ const Menu = (props) => {
             alt="Life Token"
           />
           <SocialFooterLink
-            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
+            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
             src={pancakeLogo}
             alt="Buy Vlad"
           />

@@ -89,7 +89,7 @@ const Nfts: Nft[] = [
   {
     name: 'All Hail VLAD',
     metadata: '',
-    description: 'A coin like no other. It grants the holder eternal life when stored in thier wallet.',
+    description: 'A coin like no other. It grants the holder eternal life when stored in their wallet.',
     previewImage: 'preview-all-hail-vlad.jpg',
     originalImage:
       'https://ipfs.io/ipfs/QmWmdegkuvXShBs47G4GPqxfwnVbtKY5pYeAoAN3Xy37KV?filename=NFT-rare-all-hail-vlad.mp4',

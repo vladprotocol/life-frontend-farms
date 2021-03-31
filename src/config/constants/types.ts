@@ -86,6 +86,7 @@ export type Nft = {
   sortOrder: number
   nftId: number
   tokenAmount: number
+  tokenSupply: number
   nftFarmContract: string
   nftContract: string
 }

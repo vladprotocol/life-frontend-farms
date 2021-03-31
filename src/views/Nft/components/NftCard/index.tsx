@@ -95,7 +95,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   // prices array containing individual prices of a mint per nft index
   // tokenPerBurn global price
 
-  const { nftId, name, previewImage, originalImage, description } = nft
+  const { nftId, name, previewImage, originalImage, description, tokenAmount, tokenSupply } = nft
   const PRICE = prices[nftId] || tokenPerBurn // here we get the price
   const MINTS = myMints[nftId] || 0
   console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
@@ -205,13 +205,13 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
         )}
         {isInitialized && loggedIn && walletCanClaim && isSupplyAvailable && (
           <Button fullWidth onClick={onPresentClaimModal} mt="24px">
-            {TranslateString(999, 'Claim this NFT')} for {PRICE} LIFE
+            {TranslateString(999, 'Claim this NFT')} for {tokenAmount} LIFE
           </Button>
         )}
         {isInitialized && loggedIn && MINTS > 0 && (
           <Button fullWidth onClick={() => history.push(`detail/${nftId}`)} mt="24px">
             <ViewNft>
-              View NFT ({MINTED}/{MAX_MINT} MINTED)
+              View NFT ({MINTED}/{tokenSupply} MINTED)
             </ViewNft>
           </Button>
         )}
@@ -233,7 +233,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
             <InfoRow>
               <Text>{TranslateString(999, 'Number minted')}:</Text>
               <Value>
-                {state.nftCount + state.nftBurnCount}/{MAX_MINT}
+                {state.nftCount + state.nftBurnCount}/{tokenSupply}
               </Value>
             </InfoRow>
             <InfoRow>

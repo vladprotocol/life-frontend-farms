@@ -107,7 +107,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   console.log(ownerById)
 
-  const { nftId, name, previewImage, originalImage, fileType, description, metadata } = nft
+  const { nftId, name, previewImage, originalImage, fileType, description, metadata, tokenAmount, tokenSupply } = nft
   const PRICE = prices[nft.nftId] || tokenPerBurn // here we get the price
   const MINTS = myMints[nftId] || 0
 
@@ -213,7 +213,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
           </Header>
           {isInitialized && loggedIn && walletCanClaim && isSupplyAvailable && (
             <Button fullWidth onClick={onPresentClaimModal} mt="24px">
-              {TranslateString(999, 'Claim this NFT')} for {PRICE} LIFE
+              {TranslateString(999, 'Claim this NFT')} for {tokenAmount} LIFE
             </Button>
           )}
           {isInitialized && walletOwnsNft && (
@@ -231,7 +231,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
               <InfoRow>
                 <Text>{TranslateString(999, 'Number minted')}:</Text>
                 <Value>
-                  {MINTED}/{MAX_MINT}
+                  {MINTED}/{tokenSupply}
                 </Value>
               </InfoRow>
               <InfoRow>

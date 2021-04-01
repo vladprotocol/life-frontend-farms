@@ -208,7 +208,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
             {TranslateString(999, 'Claim this NFT')} for {tokenAmount} LIFE
           </Button>
         )}
-        {isInitialized && loggedIn && MINTS > 0 && (
+        {isInitialized && (
           <Button fullWidth onClick={() => history.push(`detail/${nftId}`)} mt="24px">
             <ViewNft>
               View NFT ({MINTED}/{tokenSupply} MINTED)

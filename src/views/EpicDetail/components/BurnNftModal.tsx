@@ -4,7 +4,7 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { Button, Checkbox, Modal, Text } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import { Nft } from 'config/constants/types'
-import { NftFarm, AMOUNT_TO_CLAIM } from 'config/constants/epic'
+import { EpicNftFarm, AMOUNT_TO_CLAIM } from 'config/constants/epic'
 import { useRabbitMintingFarm } from 'hooks/useContract'
 import InfoRow from './InfoRow'
 
@@ -35,7 +35,7 @@ const BurnNftModal: React.FC<BurnNftModalProps> = ({ nft, tokenIds, onSuccess, o
   const [accepted, setAccepted] = useState(false)
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const nftMintingContract = useRabbitMintingFarm(NftFarm)
+  const nftMintingContract = useRabbitMintingFarm(EpicNftFarm)
 
   const handleConfirm = async () => {
     try {

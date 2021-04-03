@@ -97,11 +97,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const { nftId, name, previewImage, originalImage, description, tokenAmount, tokenSupply } = nft
   const PRICE = prices[nftId] || tokenPerBurn // here we get the price
-  const MINTS = myMints[nftId] || 0
-  console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
-
-  const hasClaimedArr: any = hasClaimed[0]
-  const ownerByIdArr: any = ownerById[0]
 
   const firstCharOfAccount = account != null && account.slice(0, 4)
   const lastCharOfAccount = account != null && account.slice(-4)
@@ -110,11 +105,18 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const loggedIn = account !== null
 
-  // console.log('?hasClaimed', hasClaimed)
+  console.log('?hasClaimed', hasClaimed)
   // console.log('?ownerById', ownerById)
 
   const nftIndex = hasClaimed && hasClaimed.indexOf(nftId)
 
+  console.log('nftId', nftId)
+  console.log('nftIndex', nftIndex)
+
+  const MINTS = myMints[nftIndex] || 0
+
+  console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
+  
   // not sure about this, you need to check if this oser own this nft in the view nft page.
   const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
 
@@ -123,8 +125,11 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < maxMintPerNft
 
+  let price = 350
 
-  const price = Math.round(350 * 1.016282 ** amounts[nftIndex] * 100) / 100
+  if(amounts && amounts[nftIndex]){
+    price = Math.round(350 * 1.016282 ** amounts[nftIndex] * 100) / 100
+  }
 
   // console.log('CONTRACT/GALLERY INFO:', totalSupplyDistributed, rarity, priceMultiplier, maxMintPerNft, tokenPerBurn)
   // console.log('LIMITS BY NFT:', tokenPerBurn, amounts, maxMintByNft, prices)

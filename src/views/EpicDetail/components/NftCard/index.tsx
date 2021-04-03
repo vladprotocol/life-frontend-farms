@@ -109,7 +109,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const { nftId, name, previewImage, originalImage, fileType, description, metadata, tokenAmount, tokenSupply } = nft
   const PRICE = prices[nft.nftId] || tokenPerBurn // here we get the price
-  const MINTS = myMints[nftId] || 0
 
   const nftIndex = hasClaimed && hasClaimed.indexOf(nftId)
 
@@ -128,6 +127,8 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   // console.log('?hasClaimed', hasClaimed)
   // console.log('?ownerById', ownerById)
+
+  const MINTS = myMints[nftIndex] || 0
 
   const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < maxMintPerNft
 

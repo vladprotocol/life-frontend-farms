@@ -160,6 +160,8 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
 
         const balanceOf = await nftContract.methods.balanceOf(account).call()
 
+        console.log(balanceOf)
+
         let nftMap: BunnyMap = {}
 
         // If the "balanceOf" is greater than 0 then retrieve the tokenIds

@@ -210,11 +210,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
               </Tag>
             )}
           </Header>
-          {isInitialized && loggedIn && walletCanClaim && isSupplyAvailable && (
-            <Button fullWidth onClick={onPresentClaimModal} mt="24px">
-              {TranslateString(999, 'Claim this NFT')} for {tokenAmount} LIFE
-            </Button>
-          )}
           {isInitialized && walletOwnsNft && (
             <Button fullWidth variant="secondary" mt="24px" onClick={onPresentTransferModal}>
               {TranslateString(999, 'Transfer')}

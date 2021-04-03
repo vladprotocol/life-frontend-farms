@@ -17,8 +17,14 @@ const Farms = lazy(() => import('./views/Farms'))
 // const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 const Nft = lazy(() => import('./views/Nft'))
+const Legendary = lazy(() => import('./views/Legendary'))
+const Epic = lazy(() => import('./views/Epic'))
 const MyCollection = lazy(() => import('./views/MyCollection'))
+const MyEpicCollection = lazy(() => import('./views/MyEpicCollection'))
+const MyLegendaryCollection = lazy(() => import('./views/MyLegendaryCollection'))
 const Detail = lazy(() => import('./views/Detail'))
+const LegendaryDetail = lazy(() => import('./views/LegendaryDetail'))
+const EpicDetail = lazy(() => import('./views/EpicDetail'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -64,10 +70,24 @@ const App: React.FC = () => {
             <Route path="/nft">
               <Nft />
             </Route>
+            <Route path="/legendary">
+              <Legendary />
+            </Route>
+            <Route path="/epic">
+              <Epic />
+            </Route>
             <Route path="/my-collection">
               <MyCollection />
             </Route>
+            <Route path="/my-epic-collection">
+              <MyEpicCollection />
+            </Route>
+            <Route path="/my-legendary-collection">
+              <MyLegendaryCollection />
+            </Route>
             <Route path="/detail/:id" component={Detail} />
+            <Route path="/legendary-detail/:id" component={LegendaryDetail} />
+            <Route path="/epic-detail/:id" component={EpicDetail} />
             {/* Redirect */}
             {/* <Route path="/staking"> */}
             {/*  <Redirect to="/pools" /> */}

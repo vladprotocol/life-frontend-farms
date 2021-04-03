@@ -3,30 +3,30 @@ nav {
 }
 
 nav ~ div > div:nth-child(1) {
-    position: relative!important;
-    height: 93vh;
+	position: relative!important;
+	height: 93vh;
 }
 
 
 nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
-    display: none;
+	display: none;
 }
 
 
 nav ~ div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
-    display: none;
+	display: none;
 }
 
 
 nav ~ div > div:nth-child(2) {
-    margin-left: 0px;
-    background: url(./bg-background.png) no-repeat;
+	margin-left: 0px;
+	background: url(./bg-background.png) no-repeat;
     background-size: cover;
     background-position: 100% 0;
 }
 
 audio {
-    filter: invert(84%);
+	filter: invert(84%);
     height: 20px;
 }
 
@@ -176,15 +176,15 @@ audio::-webkit-media-controls-play-button,
 }
 
 @media(max-width:678px){
-    .body-bg nav{
-        top: 60px;
-    }
+	.body-bg nav{
+		top: 60px;
+	}
 }
 
 @media(max-width:678px){
-    nav ~ div > div:nth-child(2) {
-        margin-top: 120px;
-    }
+	nav ~ div > div:nth-child(2) {
+		margin-top: 120px;
+	}
 
     nav ~ div > div:nth-child(1) {
         padding-top: 150px;
@@ -193,9 +193,9 @@ audio::-webkit-media-controls-play-button,
 }
 
 @media(max-width:1200px) and (min-width:678px) {
-    .container {
-        width: 96%;
-    }
+	.container {
+		width: 96%;
+	}
 }
 
 

@@ -123,11 +123,8 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < maxMintPerNft
 
-  let price = 350
 
-  if(amounts && amounts[nftIndex]){
-    price = Math.round(350 * 1.016282 ** amounts[nftIndex] * 100) / 100
-  }
+  const price = Math.round(350 * 1.016282 ** amounts[nftIndex] * 100) / 100
 
   // console.log('CONTRACT/GALLERY INFO:', totalSupplyDistributed, rarity, priceMultiplier, maxMintPerNft, tokenPerBurn)
   // console.log('LIMITS BY NFT:', tokenPerBurn, amounts, maxMintByNft, prices)

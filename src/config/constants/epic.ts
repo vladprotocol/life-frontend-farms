@@ -22,6 +22,40 @@ const Nfts: Nft[] = [
     nftFarmContract: '0x3627Ca89675b42489aD39619A92dd0Ce24CA90bB',
     nftContract: '0xa521D5FA64D0aAdB4ee607BAb20142aA173e4392',
   },
+  {
+    name: 'Bank of Vladhalla',
+    metadata: '',
+    description:
+      "They say when you leave this life you can't take it with you... Well, who's leaving? That's for mortals to worry about.",
+    previewImage: 'preview-bank-of-vlad.png',
+    originalImage:
+      'https://ipfs.io/ipfs/Qma87NMJAu33nQuCRvoAK4MwP9CBwhGsLkQdTptM6uxoyp?filename=NFT-epic-bank-of-vladhalla.mp4',
+    fileType: 'mp4',
+    blurImage: '',
+    sortOrder: 1,
+    nftId: 1,
+    tokenAmount: 350,
+    tokenSupply: 66,
+    nftFarmContract: '0x3627Ca89675b42489aD39619A92dd0Ce24CA90bB',
+    nftContract: '0xa521D5FA64D0aAdB4ee607BAb20142aA173e4392',
+  },
+  {
+    name: 'Gates of Vladhalla',
+    metadata: '',
+    description:
+      'Tales have been written of the select few who have made it this far. The  sheer majesty of these very gates would make the hairs on their arms stand on end. Only the immortal shall pass through - will you?',
+    previewImage: 'preview-gate-of-vlad.jpg',
+    originalImage:
+      'https://ipfs.io/ipfs/QmW1az8XriRqdx2zXY7w71XFxXUEfH5hUsyZTzwGBe7gfh?filename=NFT-epic-gates-of-vladhalla.png',
+    fileType: 'png',
+    blurImage: '',
+    sortOrder: 2,
+    nftId: 2,
+    tokenAmount: 350,
+    tokenSupply: 66,
+    nftFarmContract: '0x3627Ca89675b42489aD39619A92dd0Ce24CA90bB',
+    nftContract: '0xa521D5FA64D0aAdB4ee607BAb20142aA173e4392',
+  },
 ]
 
 export default Nfts

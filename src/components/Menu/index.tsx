@@ -82,6 +82,7 @@ const LiveLinkGroup = styled.div`
 const LiveLink = styled.a`
   color: white;
   margin: 10px;
+  display: inline-block;
 `
 
 const SocialLink = styled.a`
@@ -250,6 +251,7 @@ const Menu = (props) => {
           />
           <RankingLink link="https://nomics.com/assets/vlad-vlad-finance" name="Nomics" />
           <RankingLink link="https://www.livecoinwatch.com/price/VladFinance-VLAD" name="LiveCoinWatch" />
+          <RankingLink link="https://coinmarketcap.com/currencies/vlad-finance" name="CoinMarketCap" />
         </LiveLinkGroup>
         <FooterCopyRight>© Vlad Finance. All Rights Reserved</FooterCopyRight>
       </Footer>

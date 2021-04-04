@@ -2,8 +2,8 @@ import React, { createContext, ReactNode, useEffect, useRef, useState } from 're
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useBlock from 'hooks/useBlock'
-import nftFarm from 'config/abi/NftFarm.json'
-import { NftFarm } from 'config/constants/legendary'
+import epicNftFarm from 'config/abi/epicNftFarm.json'
+import { LegendaryNftFarm } from 'config/constants/legendary'
 import multicall from 'utils/multicall'
 import { getNftContract, getFromWei, getToFloat, getToInt, getFromWayArray } from '../utils/contracts'
 
@@ -92,17 +92,17 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
           priceMultiplierArr,
           maxMintPerNftArr,
           tokenPerBurnArr,
-        ] = await multicall(nftFarm, [
-          { address: NftFarm, name: 'startBlockNumber' },
-          { address: NftFarm, name: 'endBlockNumber' },
-          { address: NftFarm, name: 'countBurnt' },
-          { address: NftFarm, name: 'totalSupplyDistributed' },
-          { address: NftFarm, name: 'currentDistributedSupply' },
-          { address: NftFarm, name: 'allowMultipleClaims' },
-          { address: NftFarm, name: 'rarity' },
-          { address: NftFarm, name: 'priceMultiplier' },
-          { address: NftFarm, name: 'maxMintPerNft' },
-          { address: NftFarm, name: 'tokenPerBurn' },
+        ] = await multicall(epicNftFarm, [
+          { address: LegendaryNftFarm, name: 'startBlockNumber' },
+          { address: LegendaryNftFarm, name: 'endBlockNumber' },
+          { address: LegendaryNftFarm, name: 'countBurnt' },
+          { address: LegendaryNftFarm, name: 'totalSupplyDistributed' },
+          { address: LegendaryNftFarm, name: 'currentDistributedSupply' },
+          { address: LegendaryNftFarm, name: 'allowMultipleClaims' },
+          { address: LegendaryNftFarm, name: 'rarity' },
+          { address: LegendaryNftFarm, name: 'priceMultiplier' },
+          { address: LegendaryNftFarm, name: 'maxMintPerNft' },
+          { address: LegendaryNftFarm, name: 'tokenPerBurn' },
         ])
 
         // TODO: Figure out why these are coming back as arrays
@@ -140,7 +140,9 @@ const NftProvider: React.FC<NftProviderProps> = ({ children }) => {
       try {
         const nftContract = getNftContract()
 
-        const getMinted = await multicall(nftFarm, [{ address: NftFarm, name: 'getMinted', params: [account] }])
+        const getMinted = await multicall(epicNftFarm, [
+          { address: LegendaryNftFarm, name: 'getMinted', params: [account] },
+        ])
 
         // console.log('getMinted', getMinted)
 

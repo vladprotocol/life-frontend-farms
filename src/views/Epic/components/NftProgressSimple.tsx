@@ -12,7 +12,7 @@ const NftProgressSimple = () => {
     <Card>
       <CardBody>
         <InfoRow>
-          <Text>{TranslateString(999, 'Total NFTs claimed')}:</Text>
+          <Text>{TranslateString(999, 'Total Epic and Legendary NFTs')}:</Text>
           <Text>
             <strong>{!isInitialized ? '...' : `${currentDistributedSupply}/${totalSupplyDistributed}`}</strong>
           </Text>

@@ -97,11 +97,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const { nftId, name, previewImage, originalImage, description, tokenAmount, tokenSupply } = nft
   const PRICE = prices[nftId] || tokenPerBurn // here we get the price
-  const MINTS = myMints[nftId] || 0
-  console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
-
-  const hasClaimedArr: any = hasClaimed[0]
-  const ownerByIdArr: any = ownerById[0]
 
   const firstCharOfAccount = account != null && account.slice(0, 4)
   const lastCharOfAccount = account != null && account.slice(-4)
@@ -110,22 +105,35 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const loggedIn = account !== null
 
-  // console.log('?hasClaimed', hasClaimed)
+  console.log('?hasClaimed', hasClaimed)
   // console.log('?ownerById', ownerById)
 
   const nftIndex = hasClaimed && hasClaimed.indexOf(nftId)
+
+  console.log('nftId', nftId)
+  console.log('nftIndex', nftIndex)
+
+  const MINTS = myMints[nftIndex] || 0
+
+  console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
 
   // not sure about this, you need to check if this oser own this nft in the view nft page.
   const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
 
   const MINTED = amounts[nftIndex] ? parseInt(amounts[nftIndex].toString()) : 0
-  const MAX_MINT = maxMintByNft[nftIndex] ? parseInt(maxMintByNft[nftIndex].toString()) : maxMintPerNft
+  const MAX_MINT = maxMintByNft[nftIndex] ? parseInt(maxMintByNft[nftIndex].toString()) : 6
 
-  const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < maxMintPerNft
+  const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < MAX_MINT
+
+  let price = 1200
+
+  if (amounts && amounts[nftIndex]) {
+    price = Math.round(1200 * 1.37973 ** amounts[nftIndex] * 100) / 100
+  }
 
   // console.log('CONTRACT/GALLERY INFO:', totalSupplyDistributed, rarity, priceMultiplier, maxMintPerNft, tokenPerBurn)
   // console.log('LIMITS BY NFT:', tokenPerBurn, amounts, maxMintByNft, prices)
-  // console.log(nftId, 'walletCanClaim', walletCanClaim, maxMintPerNft, MINTED, MAX_MINT)
+  console.log(nftId, 'walletCanClaim', walletCanClaim, MAX_MINT, MINTED, MAX_MINT)
 
   const tokenIds = getTokenIds(nftId)
   const isSupplyAvailable = currentDistributedSupply < totalSupplyDistributed
@@ -205,7 +213,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
         )}
         {isInitialized && loggedIn && walletCanClaim && isSupplyAvailable && (
           <Button fullWidth onClick={onPresentClaimModal} mt="24px">
-            {TranslateString(999, 'Claim this NFT')} for {tokenAmount} LIFE
+            {TranslateString(999, 'Claim this NFT')} for {price} LIFE
           </Button>
         )}
         {isInitialized && (
@@ -233,7 +241,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
             <InfoRow>
               <Text>{TranslateString(999, 'Number minted')}:</Text>
               <Value>
-                {state.nftCount + state.nftBurnCount}/{tokenSupply}
+                {MINTED}/{tokenSupply}
               </Value>
             </InfoRow>
             <InfoRow>

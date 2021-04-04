@@ -116,24 +116,24 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   const MINTS = myMints[nftIndex] || 0
 
   console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
-  
+
   // not sure about this, you need to check if this oser own this nft in the view nft page.
   const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
 
   const MINTED = amounts[nftIndex] ? parseInt(amounts[nftIndex].toString()) : 0
   const MAX_MINT = maxMintByNft[nftIndex] ? parseInt(maxMintByNft[nftIndex].toString()) : maxMintPerNft
 
-  const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < maxMintPerNft
+  const walletCanClaim = maxMintPerNft === 0 || MINTED === undefined || MINTED < MAX_MINT
 
   let price = 350
 
-  if(amounts && amounts[nftIndex]){
+  if (amounts && amounts[nftIndex]) {
     price = Math.round(350 * 1.016282 ** amounts[nftIndex] * 100) / 100
   }
 
   // console.log('CONTRACT/GALLERY INFO:', totalSupplyDistributed, rarity, priceMultiplier, maxMintPerNft, tokenPerBurn)
   // console.log('LIMITS BY NFT:', tokenPerBurn, amounts, maxMintByNft, prices)
-  // console.log(nftId, 'walletCanClaim', walletCanClaim, maxMintPerNft, MINTED, MAX_MINT)
+  // console.log(nftId, 'walletCanClaim', walletCanClaim, MAX_MINT, MINTED, MAX_MINT)
 
   const tokenIds = getTokenIds(nftId)
   const isSupplyAvailable = currentDistributedSupply < totalSupplyDistributed

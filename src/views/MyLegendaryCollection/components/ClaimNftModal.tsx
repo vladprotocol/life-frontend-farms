@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { Button, Modal, Text } from '@pancakeswap-libs/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { NftFarm, AMOUNT_TO_CLAIM } from 'config/constants/legendary'
+import { LegendaryNftFarm, AMOUNT_TO_CLAIM } from 'config/constants/legendary'
 import { getCakeAddress } from 'utils/addressHelpers'
 import { Nft } from 'config/constants/types'
 import useTokenBalance from 'hooks/useTokenBalance'
@@ -39,14 +39,14 @@ const ClaimNftModal: React.FC<ClaimNftModalProps> = ({ nft, onSuccess, onDismiss
   const [error, setError] = useState(null)
   const TranslateString = useI18n()
   const { account } = useWallet()
-  const nftMintingContract = useRabbitMintingFarm(NftFarm)
+  const nftMintingContract = useRabbitMintingFarm(LegendaryNftFarm)
   const contraToken = useERC20(getCakeAddress())
-  const allowance = useNftAllowance(contraToken, NftFarm, pendingTx)
-  const onApprove = useNftApprove(contraToken, NftFarm)
+  const allowance = useNftAllowance(contraToken, LegendaryNftFarm, pendingTx)
+  const onApprove = useNftApprove(contraToken, LegendaryNftFarm)
   const cakeBalance = useTokenBalance(getCakeAddress())
   const cakeInWallet = getBalanceNumber(cakeBalance)
 
-  // console.log('getCakeAddress', getCakeAddress(), NftFarm, allowance)
+  // console.log('getCakeAddress', getCakeAddress(), LegendaryNftFarm, allowance)
   // console.log('allowance', allowance)
 
   const handleConfirm = async () => {

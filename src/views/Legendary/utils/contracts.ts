@@ -3,7 +3,7 @@ import { getContract } from 'utils/web3'
 import { ContractOptions } from 'web3-eth-contract'
 import nftFarm from 'config/abi/NftFarm.json'
 import nft from 'config/abi/NFT.json'
-import { NftFarm, NFT } from 'config/constants/legendary'
+import { NftFarm, NFT } from 'config/constants/nfts'
 import BigNumber from 'bignumber.js'
 // TODO: Figure out how to add current account to contracts to write methods can be used
 

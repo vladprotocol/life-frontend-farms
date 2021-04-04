@@ -104,6 +104,14 @@ const AudioPlayer = styled.audio`
   }
 `
 
+const AudioDescription = styled.span`
+  font-size: 11px !important;
+`
+
+const AudioDescriptionA = styled.a`
+  font-size: 11px !important;
+`
+
 const CustomButton = styled(Button)`
   height: 22px;
   margin-left: 10px;
@@ -153,13 +161,16 @@ const Menu = (props) => {
                 <div className="tp-inner">
                   <ul>
                     <li>
-                      <span>
-                        Mr. Oppo - Journey to Vladhalla
+                      <AudioDescription>
+                        Listen to DJ Ezra - Live From $VLADHalla
                         <AudioPlayer controls>
-                          <source src="./mr-oppo.mp3" type="audio/mpeg" />
+                          <source src="./dj-erza.mp3" type="audio/mpeg" />
                           <track kind="captions" />
                         </AudioPlayer>
-                      </span>
+                        <AudioDescriptionA href="https://soundcloud.app.goo.gl/kHiyk" target="_blank" rel="noreferrer">
+                          Enjoying $LIFE! by DJ Ezra Is Back! on #SoundCloud
+                        </AudioDescriptionA>
+                      </AudioDescription>
                     </li>
                   </ul>
                 </div>

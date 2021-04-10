@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react'
+import styled from 'styled-components'
 import { Route, useRouteMatch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
@@ -21,6 +22,10 @@ export interface FarmsProps {
   tokenMode?: boolean
 }
 
+const CustomA = styled.a`
+  color: white;
+`
+
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -40,9 +45,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   const [stakedOnly, setStakedOnly] = useState(false)
 
-  const activeFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X')
+  const activeFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '1')
   const inactiveFarms = farmsLP.filter(
-    (farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X' && farm.lpSymbol !== 'BNB-BUSD LP',
+    (farm) => !!farm.isTokenOnly === !!tokenMode && farm.lpSymbol !== 'BNB-BUSD LP',
   )
 
   const stakedOnlyFarms = activeFarms.filter(
@@ -95,11 +100,14 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   return (
     <Page>
-      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        {tokenMode
-          ? TranslateString(10002, 'Stake tokens to earn LIFE')
-          : TranslateString(320, 'Stake LP tokens to earn LIFE')}
+      <Heading as="h1" size="xxl" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+        LIFE FARMING HAS ENDED
       </Heading>
+      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+        NEXT PHASE FARMING <CustomA href="https://vlad-finance.medium.com/vlad-phase-2-life-after-life-farming-19c730654f79" target="_blank" rel="noreferrer">COMING SOON</CustomA>
+      </Heading>
+
+
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />

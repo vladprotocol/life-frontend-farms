@@ -36,6 +36,11 @@ const config: MenuEntry[] = [
     href: '/my-collection',
   },
   {
+    label: 'External Pools',
+    icon: 'PoolIcon',
+    href: '/pools',
+  },
+  {
     label: 'More',
     icon: 'MoreIcon',
     items: [
@@ -67,11 +72,6 @@ const config: MenuEntry[] = [
     icon: 'NftIcon',
     href: '#',
   },
-  // {
-  //   label: 'Pools',
-  //   icon: 'PoolIcon',
-  //   href: '/pools',
-  // },
   // {
   //   label: 'Lottery',
   //   icon: 'TicketIcon',

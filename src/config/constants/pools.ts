@@ -5,6 +5,7 @@ const pools: PoolConfig[] = [
     sousId: 0,
     tokenName: 'STOS',
     stakingTokenName: QuoteToken.VLAD,
+    earningToken: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
     stakingTokenAddress: '0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
     contractAddress: {
       97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',

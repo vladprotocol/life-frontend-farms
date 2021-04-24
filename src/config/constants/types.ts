@@ -64,6 +64,7 @@ export interface PoolConfig {
   image?: string
   tokenName: string
   stakingTokenName: QuoteToken
+  earningToken?: string
   stakingLimit?: number
   stakingTokenAddress?: string
   contractAddress: Address

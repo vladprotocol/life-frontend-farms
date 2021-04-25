@@ -10,6 +10,7 @@ const CardTitle = styled.div<StyledTitleProps>`
   font-size: 24px;
   line-height: 1.1;
   margin-bottom: 14px;
+  color: #5ca269;
 `
 
 export default CardTitle

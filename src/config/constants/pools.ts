@@ -27,7 +27,7 @@ const pools: PoolConfig[] = [
     stakingTokenAddress: '0x60d5e86c0074b56e52a7540b3bf36c399e9f3038',
     contractAddress: {
       97: '0x0',
-      56: '0xaeECe5A62Ab8368dCAc141793e535AA18781B371',
+      56: '0x376006485943D1c7539bDe36A9f8d6302848469e',
     },
     poolCategory: PoolCategory.COMMUNITY,
     projectLink: 'https://stos.finance/',
@@ -45,7 +45,7 @@ const pools: PoolConfig[] = [
     stakingTokenAddress: '0x02E0A57343ef22E4c673AFF64Dc56C71caeD86c1',
     contractAddress: {
       97: '0x0',
-      56: '0x8fCC18f570F90D8A6DEA2Be315eB84F1BbBcD912',
+      56: '0xd7932B581f5d1CAf4548Ad1746814a1E809a8f80',
     },
     poolCategory: PoolCategory.COMMUNITY,
     projectLink: 'https://stos.finance/',
@@ -63,7 +63,7 @@ const pools: PoolConfig[] = [
     stakingTokenAddress: '0xe0E3F3698ba35487e5285fDfd31a5B8d8F564D8b',
     contractAddress: {
       97: '0x0',
-      56: '0x9a9B9003812400B58D9a56Daa824CC7e9C503afB',
+      56: '0x29a4f42d5793868181F55120F3b10DecD314493F',
     },
     poolCategory: PoolCategory.COMMUNITY,
     projectLink: 'https://stos.finance/',

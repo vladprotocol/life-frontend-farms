@@ -1,4 +1,5 @@
 import { PoolConfig, QuoteToken, PoolCategory } from './types'
+import contracts from "./contracts";
 
 const pools: PoolConfig[] = [
   {
@@ -18,6 +19,8 @@ const pools: PoolConfig[] = [
     sortOrder: 1,
     isFinished: true,
     tokenDecimals: 18,
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd
   },
   {
     sousId: 2,
@@ -36,6 +39,8 @@ const pools: PoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
     tokenDecimals: 18,
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd
   },
   {
     sousId: 3,
@@ -54,6 +59,8 @@ const pools: PoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
     tokenDecimals: 18,
+    quoteTokenSymbol: QuoteToken.VLAD,
+    quoteTokenAdresses: contracts.cake
   },
   {
     sousId: 4,
@@ -72,6 +79,8 @@ const pools: PoolConfig[] = [
     sortOrder: 1,
     isFinished: false,
     tokenDecimals: 18,
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb
   },
 ]
 

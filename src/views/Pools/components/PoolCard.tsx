@@ -5,7 +5,7 @@ import { Button, IconButton, useModal, AddIcon, Image } from '@pancakeswap-libs/
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
-import { useERC20 } from 'hooks/useContract'
+import { useERC20, useLP } from 'hooks/useContract'
 import { useSousApprove } from 'hooks/useApprove'
 import useI18n from 'hooks/useI18n'
 import { useSousStake } from 'hooks/useStake'
@@ -13,9 +13,12 @@ import { useSousUnstake } from 'hooks/useUnstake'
 import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useSousHarvest } from 'hooks/useHarvest'
+import { useGetStats } from 'hooks/api'
 import Balance from 'components/Balance'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
+import { useGetApiPrice, useFarms, usePriceBnbBusd } from 'state/hooks'
+import { getPoolApr, getLPprice } from 'utils/apr'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
 import CompoundModal from './CompoundModal'
@@ -25,12 +28,8 @@ import OldSyrupTitle from './OldSyrupTitle'
 import HarvestButton from './HarvestButton'
 import CardFooter from './CardFooter'
 
-interface PoolWithApy extends Pool {
-  apy: BigNumber
-}
-
 interface HarvestProps {
-  pool: PoolWithApy
+  pool: Pool
 }
 
 const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
@@ -42,7 +41,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     stakingTokenAddress,
     projectLink,
     harvest,
-    apy,
     tokenDecimals,
     poolCategory,
     totalStaked,
@@ -56,12 +54,79 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const isBnbPool = poolCategory === PoolCategory.BINANCE
   const TranslateString = useI18n()
   const stakingTokenContract = useERC20(stakingTokenAddress)
+  const lpTokenContract = useLP(stakingTokenAddress)
+  const stats = useGetStats()
+
+  const [apy, setAPY] = useState(new BigNumber(0))
+  const [stakingTokenPrice, setStakingTokenPrice] = useState(new BigNumber(0))
+  const [baseAddress, setBaseAddress] = useState()
+  const [quouteAddress, setquouteAddress] = useState()
+  const [liquidity, setLiquidity] = useState(new BigNumber(0))
+  const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
+
+  const [token0, setToken0] = useState()
+  const [token1, setToken1] = useState()
+
   const { account } = useWallet()
   const block = useBlock()
   const { onApprove } = useSousApprove(stakingTokenContract, sousId)
   const { onStake } = useSousStake(sousId, isBnbPool)
   const { onUnstake } = useSousUnstake(sousId)
   const { onReward } = useSousHarvest(sousId, isBnbPool)
+  const farms = useFarms()
+
+  // APR
+  const rewardTokenPrice = useGetApiPrice(pool.earningToken ? pool.earningToken : '')
+
+  const token0price = useGetApiPrice(token0 !== undefined ? token0 : '')
+  const token1price = useGetApiPrice(token1 !== undefined ? token1 : '')
+
+  React.useEffect(() => {
+    if (stakingTokenAddress !== undefined) {
+      lpTokenContract.methods
+        .token0()
+        .call()
+        .then((res0) => {
+          setToken0(res0)
+          lpTokenContract.methods
+            .token1()
+            .call()
+            .then((res1) => {
+              setToken1(res1)
+              lpTokenContract.methods
+                .totalSupply()
+                .call()
+                .then((res2) => {
+                  setTotalSupply(new BigNumber(res2))
+                })
+            })
+        })
+    }
+  }, [lpTokenContract, stakingTokenAddress])
+
+  React.useEffect(() => {
+    if (token0 !== undefined && token1 !== undefined) {
+      console.log(token0)
+      console.log(token1)
+      const pair = (token0 !== undefined ? token0 : '').concat('_').concat(token1)
+      getLPprice().then((data) => {
+        setLiquidity(new BigNumber(data[pair].liquidity))
+        console.log(data[pair])
+        const baseValue = new BigNumber(token0price).times(new BigNumber(data[pair].base_volume))
+        const quoteValue = new BigNumber(token1price).times(new BigNumber(data[pair].quote_volume))
+        const totalValue = baseValue.plus(quoteValue)
+        const lpTokenPrice = totalValue.div(getBalanceNumber(totalSupply))
+        const apr = getPoolApr(
+          lpTokenPrice,
+          rewardTokenPrice,
+          getBalanceNumber(pool.totalStaked, pool.tokenDecimals),
+          parseFloat(pool.tokenPerBlock),
+        )
+        setAPY(new BigNumber(apr))
+        console.log(apr)
+      })
+    }
+  }, [token0, token1, token0price, token1price, totalSupply, pool, rewardTokenPrice])
 
   const [requestedApproval, setRequestedApproval] = useState(false)
   const [pendingTx, setPendingTx] = useState(false)

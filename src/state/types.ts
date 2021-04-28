@@ -39,9 +39,45 @@ export interface PoolsState {
   data: Pool[]
 }
 
+// API Price State
+export interface PriceApiList {
+  /* eslint-disable camelcase */
+  [key: string]: {
+    name: string
+    symbol: string
+    price: string
+    price_BNB: string
+  }
+}
+
+export interface PriceApiListThunk {
+  /* eslint-disable camelcase */
+  [key: string]: number
+}
+
+export interface PriceApiResponse {
+  /* eslint-disable camelcase */
+  updated_at: string
+  data: PriceApiList
+}
+
+export interface PriceApiThunk {
+  /* eslint-disable camelcase */
+  updated_at: string
+  data: PriceApiListThunk
+}
+
+export interface PriceState {
+  isLoading: boolean
+  lastUpdated: string
+  data: PriceApiListThunk
+}
+
 // Global state
 
+// Global state
 export interface State {
   farms: FarmsState
   pools: PoolsState
+  prices: PriceState
 }

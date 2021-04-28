@@ -13,7 +13,6 @@ import { useSousUnstake } from 'hooks/useUnstake'
 import useBlock from 'hooks/useBlock'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useSousHarvest } from 'hooks/useHarvest'
-import { useGetStats } from 'hooks/api'
 import Balance from 'components/Balance'
 import { QuoteToken, PoolCategory } from 'config/constants/types'
 import { Pool } from 'state/types'
@@ -55,12 +54,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const TranslateString = useI18n()
   const stakingTokenContract = useERC20(stakingTokenAddress)
   const lpTokenContract = useLP(stakingTokenAddress)
-  const stats = useGetStats()
 
   const [apy, setAPY] = useState(new BigNumber(0))
-  const [stakingTokenPrice, setStakingTokenPrice] = useState(new BigNumber(0))
-  const [baseAddress, setBaseAddress] = useState()
-  const [quouteAddress, setquouteAddress] = useState()
+
   const [liquidity, setLiquidity] = useState(new BigNumber(0))
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
 
@@ -80,6 +76,52 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
 
   const token0price = useGetApiPrice(token0 !== undefined ? token0 : '')
   const token1price = useGetApiPrice(token1 !== undefined ? token1 : '')
+
+  const [requestedApproval, setRequestedApproval] = useState(false)
+  const [pendingTx, setPendingTx] = useState(false)
+
+  const allowance = new BigNumber(userData?.allowance || 0)
+  const stakingTokenBalance = new BigNumber(userData?.stakingTokenBalance || 0)
+  const stakedBalance = new BigNumber(userData?.stakedBalance || 0)
+  const earnings = new BigNumber(userData?.pendingReward || 0)
+
+  const blocksUntilStart = Math.max(startBlock - block, 0)
+  const blocksRemaining = Math.max(endBlock - block, 0)
+  const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
+  const accountHasStakedBalance = stakedBalance?.toNumber() > 0
+  const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
+  const isCardActive = isFinished && accountHasStakedBalance
+
+  const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
+  const [onPresentDeposit] = useModal(
+    <DepositModal
+      max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}
+      onConfirm={onStake}
+      tokenName={stakingLimit ? `${stakingTokenName} (${stakingLimit} max)` : stakingTokenName}
+    />,
+  )
+
+  const [onPresentCompound] = useModal(
+    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
+  )
+
+  const [onPresentWithdraw] = useModal(
+    <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
+  )
+
+  const handleApprove = useCallback(async () => {
+    try {
+      setRequestedApproval(true)
+      const txHash = await onApprove()
+      // user rejected tx or didn't go thru
+      if (!txHash) {
+        setRequestedApproval(false)
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  }, [onApprove, setRequestedApproval])
+
 
   React.useEffect(() => {
     if (stakingTokenAddress !== undefined) {
@@ -127,51 +169,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
       })
     }
   }, [token0, token1, token0price, token1price, totalSupply, pool, rewardTokenPrice])
-
-  const [requestedApproval, setRequestedApproval] = useState(false)
-  const [pendingTx, setPendingTx] = useState(false)
-
-  const allowance = new BigNumber(userData?.allowance || 0)
-  const stakingTokenBalance = new BigNumber(userData?.stakingTokenBalance || 0)
-  const stakedBalance = new BigNumber(userData?.stakedBalance || 0)
-  const earnings = new BigNumber(userData?.pendingReward || 0)
-
-  const blocksUntilStart = Math.max(startBlock - block, 0)
-  const blocksRemaining = Math.max(endBlock - block, 0)
-  const isOldSyrup = stakingTokenName === QuoteToken.SYRUP
-  const accountHasStakedBalance = stakedBalance?.toNumber() > 0
-  const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
-  const isCardActive = isFinished && accountHasStakedBalance
-
-  const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
-  const [onPresentDeposit] = useModal(
-    <DepositModal
-      max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}
-      onConfirm={onStake}
-      tokenName={stakingLimit ? `${stakingTokenName} (${stakingLimit} max)` : stakingTokenName}
-    />,
-  )
-
-  const [onPresentCompound] = useModal(
-    <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingTokenName} />,
-  )
-
-  const [onPresentWithdraw] = useModal(
-    <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
-  )
-
-  const handleApprove = useCallback(async () => {
-    try {
-      setRequestedApproval(true)
-      const txHash = await onApprove()
-      // user rejected tx or didn't go thru
-      if (!txHash) {
-        setRequestedApproval(false)
-      }
-    } catch (e) {
-      console.error(e)
-    }
-  }, [onApprove, setRequestedApproval])
 
   return (
     <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>

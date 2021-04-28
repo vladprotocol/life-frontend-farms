@@ -45,8 +45,6 @@ const Farm: React.FC = () => {
     const rewardTokenFarm = farms.find((f) => f.tokenSymbol === pool.quoteTokenSymbol)
     const stakingTokenFarm = farms.find((s) => s.tokenSymbol === pool.quoteTokenAdresses[CHAIN_ID])
 
-    console.log('rewardTokenFarm', rewardTokenFarm);
-
     // /!\ Assume that the farm quote price is BNB
     const stakingTokenPriceInBNB = isBnbPool ? new BigNumber(1) : new BigNumber(stakingTokenFarm?.tokenPriceVsQuote)
     const rewardTokenPriceInBNB = priceToBnb(
@@ -58,8 +56,6 @@ const Farm: React.FC = () => {
     const totalRewardPricePerYear = rewardTokenPriceInBNB.times(pool.tokenPerBlock).times(BLOCKS_PER_YEAR)
     const totalStakingTokenInPool = stakingTokenPriceInBNB.times(getBalanceNumber(pool.totalStaked))
     const apy = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
-
-
 
     return {
       ...pool,

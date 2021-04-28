@@ -1,5 +1,5 @@
 import { PoolConfig, QuoteToken, PoolCategory } from './types'
-import contracts from "./contracts";
+import contracts from './contracts'
 
 const pools: PoolConfig[] = [
   {

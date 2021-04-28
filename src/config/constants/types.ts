@@ -79,7 +79,7 @@ export interface PoolConfig {
   isFinished?: boolean
   tokenDecimals: number
   quoteTokenSymbol: string
-  quoteTokenAdresses: {56: string, 97: string}
+  quoteTokenAdresses: { 56: string, 97: string }
 }
 
 export type Nft = {

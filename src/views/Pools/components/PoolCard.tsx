@@ -60,6 +60,9 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const [liquidity, setLiquidity] = useState(new BigNumber(0))
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
 
+  const [reserve0, setReserve0] = useState(new BigNumber(0))
+  const [reserve1, setReserve1] = useState(new BigNumber(0))
+
   const [token0, setToken0] = useState()
   const [token1, setToken1] = useState()
 
@@ -122,7 +125,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     }
   }, [onApprove, setRequestedApproval])
 
-
   React.useEffect(() => {
     if (stakingTokenAddress !== undefined) {
       lpTokenContract.methods
@@ -140,6 +142,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
                 .call()
                 .then((res2) => {
                   setTotalSupply(new BigNumber(res2))
+                  lpTokenContract.methods
+                    .getReserves()
+                    .call()
+                    .then((reserves) => {
+                      setReserve0(new BigNumber(getBalanceNumber(reserves._reserve0)))
+                      setReserve1(new BigNumber(getBalanceNumber(reserves._reserve1)))
+                    })
                 })
             })
         })
@@ -147,17 +156,31 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   }, [lpTokenContract, stakingTokenAddress])
 
   React.useEffect(() => {
-    if (token0 !== undefined && token1 !== undefined) {
-      console.log(token0)
-      console.log(token1)
+    if (token0 !== undefined && token1 !== undefined && reserve0 !== undefined && reserve1 !== undefined) {
       const pair = (token0 !== undefined ? token0 : '').concat('_').concat(token1)
       getLPprice().then((data) => {
         setLiquidity(new BigNumber(data[pair].liquidity))
-        console.log(data[pair])
-        const baseValue = new BigNumber(token0price).times(new BigNumber(data[pair].base_volume))
-        const quoteValue = new BigNumber(token1price).times(new BigNumber(data[pair].quote_volume))
+
+        console.log('pairData:', data[pair])
+
+        console.log('reserve0:', reserve0.toString())
+        console.log('reserve1:', reserve1.toString())
+
+        const baseValue = new BigNumber(token0price).times(reserve0)
+        const quoteValue = new BigNumber(token1price).times(reserve1)
+
         const totalValue = baseValue.plus(quoteValue)
         const lpTokenPrice = totalValue.div(getBalanceNumber(totalSupply))
+
+        console.log('totalSupply:', getBalanceNumber(totalSupply).toString())
+        console.log('token0price:', token0price.toString())
+        console.log('token1price:', token1price.toString())
+
+        console.log('baseValue:', baseValue.toString())
+        console.log('quoteValue:', quoteValue.toString())
+        console.log('totalValue:', totalValue.toString())
+        console.log('lpTokenPrice:', lpTokenPrice.toString())
+
         const apr = getPoolApr(
           lpTokenPrice,
           rewardTokenPrice,
@@ -165,10 +188,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
           parseFloat(pool.tokenPerBlock),
         )
         setAPY(new BigNumber(apr))
-        console.log(apr)
+        console.log('APR:', apr)
       })
     }
-  }, [token0, token1, token0price, token1price, totalSupply, pool, rewardTokenPrice])
+  }, [token0, token1, token0price, token1price, totalSupply, pool, rewardTokenPrice, reserve0, reserve1])
 
   return (
     <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>

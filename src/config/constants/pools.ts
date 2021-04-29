@@ -20,7 +20,7 @@ const pools: PoolConfig[] = [
     isFinished: true,
     tokenDecimals: 18,
     quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd
+    quoteTokenAdresses: contracts.busd,
   },
   {
     sousId: 2,
@@ -40,7 +40,7 @@ const pools: PoolConfig[] = [
     isFinished: false,
     tokenDecimals: 18,
     quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd
+    quoteTokenAdresses: contracts.busd,
   },
   {
     sousId: 3,
@@ -60,7 +60,7 @@ const pools: PoolConfig[] = [
     isFinished: false,
     tokenDecimals: 18,
     quoteTokenSymbol: QuoteToken.VLAD,
-    quoteTokenAdresses: contracts.cake
+    quoteTokenAdresses: contracts.cake,
   },
   {
     sousId: 4,
@@ -80,7 +80,7 @@ const pools: PoolConfig[] = [
     isFinished: false,
     tokenDecimals: 18,
     quoteTokenSymbol: QuoteToken.BNB,
-    quoteTokenAdresses: contracts.wbnb
+    quoteTokenAdresses: contracts.wbnb,
   },
 ]
 

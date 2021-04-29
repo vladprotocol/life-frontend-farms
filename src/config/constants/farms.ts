@@ -16,7 +16,7 @@ const farms: FarmConfig[] = [
       56: '0x279d41f3f78fe5C1f0BA41aE963d6E545113C973',
     },
     quoteTokenSymbol: QuoteToken.BNB,
-    quoteTokenAdresses: contracts.wbnb
+    quoteTokenAdresses: contracts.wbnb,
   },
   {
     pid: 3,
@@ -32,7 +32,7 @@ const farms: FarmConfig[] = [
       56: '0x279d41f3f78fe5C1f0BA41aE963d6E545113C973',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd
+    quoteTokenAdresses: contracts.busd,
   },
   {
     pid: 0,
@@ -48,7 +48,7 @@ const farms: FarmConfig[] = [
       56: '0x50f4220C82c9325dC99f729C3328FB5c338BEaae',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd
+    quoteTokenAdresses: contracts.busd,
   },
   {
     pid: 1,
@@ -64,7 +64,7 @@ const farms: FarmConfig[] = [
       56: '0x50f4220C82c9325dC99f729C3328FB5c338BEaae',
     },
     quoteTokenSymbol: QuoteToken.BNB,
-    quoteTokenAdresses: contracts.wbnb
+    quoteTokenAdresses: contracts.wbnb,
   },
 
   {
@@ -81,7 +81,7 @@ const farms: FarmConfig[] = [
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd
+    quoteTokenAdresses: contracts.busd,
   },
 ]
 

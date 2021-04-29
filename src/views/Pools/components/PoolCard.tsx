@@ -60,8 +60,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const [liquidity, setLiquidity] = useState(new BigNumber(0))
   const [totalSupply, setTotalSupply] = useState(new BigNumber(0))
 
-  const [ reserve0, setReserve0 ] = useState(new BigNumber(0))
-  const [ reserve1, setReserve1 ] = useState(new BigNumber(0))
+  const [reserve0, setReserve0] = useState(new BigNumber(0))
+  const [reserve1, setReserve1] = useState(new BigNumber(0))
 
   const [token0, setToken0] = useState()
   const [token1, setToken1] = useState()
@@ -125,7 +125,6 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     }
   }, [onApprove, setRequestedApproval])
 
-
   React.useEffect(() => {
     if (stakingTokenAddress !== undefined) {
       lpTokenContract.methods
@@ -142,11 +141,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
                 .totalSupply()
                 .call()
                 .then((res2) => {
-                  setTotalSupply(new BigNumber(res2));
-                  lpTokenContract.methods.getReserves().call().then((reserves)=>{
-                    setReserve0(new BigNumber(getBalanceNumber(reserves._reserve0)))
-                    setReserve1(new BigNumber(getBalanceNumber(reserves._reserve1)))
-                  })
+                  setTotalSupply(new BigNumber(res2))
+                  lpTokenContract.methods
+                    .getReserves()
+                    .call()
+                    .then((reserves) => {
+                      setReserve0(new BigNumber(getBalanceNumber(reserves._reserve0)))
+                      setReserve1(new BigNumber(getBalanceNumber(reserves._reserve1)))
+                    })
                 })
             })
         })
@@ -172,10 +174,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
 
         console.log('totalSupply:', getBalanceNumber(totalSupply).toString())
         console.log('token0price:', token0price.toString())
-        console.log('token1price:',token1price.toString())
+        console.log('token1price:', token1price.toString())
 
         console.log('baseValue:', baseValue.toString())
-        console.log('quoteValue:',quoteValue.toString())
+        console.log('quoteValue:', quoteValue.toString())
         console.log('totalValue:', totalValue.toString())
         console.log('lpTokenPrice:', lpTokenPrice.toString())
 

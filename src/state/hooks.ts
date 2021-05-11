@@ -97,9 +97,13 @@ export const useGetApiPrice = (address: string) => {
 export const usePriceCakeBusd = (): BigNumber => {
   const cakeBnbFarm = useFarmFromPid(1)
   const bnbBusdFarm = useFarmFromPid(2)
+  let cakeBusdPrice = ZERO
 
-  const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
-  const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
+  if (!!bnbBusdFarm && !!bnbBusdFarm.tokenPriceVsQuote) {
+    cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote
+      ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote).times(cakeBnbFarm.tokenPriceVsQuote)
+      : ZERO
+  }
 
   return cakeBusdPrice
 }

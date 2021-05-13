@@ -115,6 +115,8 @@ const AudioDescriptionA = styled.a`
 const CustomButton = styled(Button)`
   height: 22px;
   margin-left: 10px;
+  font-size: 12px;
+  padding: 10px!important;
 `
 
 const CustomI = styled.i`
@@ -123,7 +125,44 @@ const CustomI = styled.i`
   margin-right: 10px;
 `
 
-let vladValue = 0
+let vladValue = 0;
+let lifeValue = 0;
+
+fetch('https://api.vlad.finance/price.php?key=6547643&pool=0x60d5e86c0074b56e52a7540b3bf36c399e9f3038&token=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973&decimals=8')
+.then((res) => res.json())
+.then(
+  (result) => {
+    if(result.status === true) {
+      vladValue = result.data
+    } else {
+      vladValue = 0
+    }
+  },
+  (error) => {
+    vladValue = 0
+  },
+).catch(() =>{
+    vladValue = 0
+  }
+);
+
+fetch('https://api.vlad.finance/price.php?key=6547643&pool=0x5ee167b75118125e7d46add5ce61f749bb977a00&token=0x50f4220c82c9325dc99f729c3328fb5c338beaae&decimals=18')
+.then((res) => res.json())
+.then(
+  (result) => {
+    if(result.status === true) {
+      lifeValue = result.data
+    } else {
+      lifeValue = 0
+    }
+  },
+  (error) => {
+    lifeValue = 0
+  },
+).catch(() => {
+    lifeValue = 0
+  }
+);
 
 const Menu = (props) => {
   const { account, connect, reset } = useWallet()
@@ -131,16 +170,6 @@ const Menu = (props) => {
   const { isDark, toggleTheme } = useTheme()
   const cakePriceUsd = usePriceCakeBusd()
 
-  fetch('https://api.coingecko.com/api/v3/simple/price?ids=vlad-finance&vs_currencies=usd')
-    .then((res) => res.json())
-    .then(
-      (result) => {
-        vladValue = Math.round(result['vlad-finance'].usd * 100) / 100
-      },
-      (error) => {
-        vladValue = 0
-      },
-    )
 
   return (
     <div className="body-bg">
@@ -205,6 +234,12 @@ const Menu = (props) => {
                       <img src={vladLogo} className="img-fluid" alt="Vlad Token" />
                     </CustomI>
                     $ {vladValue}
+                  </CustomButton>
+                  <CustomButton variant="primary">
+                    <CustomI>
+                      <img src={lifeLogo} className="img-fluid" alt="Life Token" />
+                    </CustomI>
+                    $ {lifeValue}
                   </CustomButton>
                 </ul>
               </div>

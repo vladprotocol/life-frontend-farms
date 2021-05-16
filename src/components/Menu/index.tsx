@@ -308,8 +308,7 @@ const Menu = (props) => {
 export default Menu
 
 const RankingLink = (value) => {
-  const link = value.link
-  const name = value.name
+  const { link, name  } = value
   return (
     <LiveLink target="_blank" href={link}>
       {name}
@@ -318,9 +317,7 @@ const RankingLink = (value) => {
 }
 
 const SocialFooterLink = (value) => {
-  const link = value.link
-  const src = value.src
-  const alt = value.alt
+  const { link, src, alt  } = value
   return (
     <SocialLink target="_blank" title={alt} href={link}>
       <SocialImageFooter src={src} alt={alt} />
@@ -329,9 +326,7 @@ const SocialFooterLink = (value) => {
 }
 
 const SocialHeaderLink = (value) => {
-  const link = value.link
-  const src = value.src
-  const alt = value.alt
+  const { link, src, alt  } = value
   return (
     <li>
       <a href={link} title={alt} target="_blank" rel="noreferrer">

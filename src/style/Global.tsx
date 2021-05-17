@@ -19,9 +19,6 @@ const GlobalStyle = createGlobalStyle`
       height: auto;
       max-width: 100%;
     }
-    .sc-dlnjwi {
-      font-family: 'Reggae One', monospace;
-    }
   }
 `
 

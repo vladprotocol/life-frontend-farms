@@ -113,7 +113,7 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   const MINTS = myMints[nftIndex] || 0
   
   // not sure about this, you need to check if this oser own this nft in the view nft page.
-  const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
+  // const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
 
   const MINTED = amounts[nftIndex] ? parseInt(amounts[nftIndex].toString()) : 0
   const MAX_MINT = maxMintByNft[nftIndex] ? parseInt(maxMintByNft[nftIndex].toString()) : maxMintPerNft

@@ -8,10 +8,6 @@ declare module 'styled-components' {
 }
 
 const GlobalStyle = createGlobalStyle`
-  * {
-    @import url('https://fonts.googleapis.com/css2?family=Metamorphous&amp;display=swap');
-    font-family: 'Montserrat', sans-serif;
-  }
   body {
     background-color: ${({ theme }) => theme.colors.background};
 

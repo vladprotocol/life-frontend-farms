@@ -236,15 +236,15 @@ ul, li, a {
     font-weight: 400;
     font-size: 34px;
     line-height: 46px;
-    color: #b90d0d;
-    text-shadow: 0 0 15px rgb(185 13 13 / 50%), 0 0 3px rgb(238 238 238 / 25%), 0 0 6px #b90d0d;
+    color: #ed3e3e;
+    text-shadow: 0 0 15px rgb(185 13 13 / 50%), 0 0 3px rgb(238 238 238 / 25%), 0 0 6px #ed3e3e;
 
 }
 .ctm-block h3{
     color: #fff;
     font-size: 28px;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px rgb(185 13 13 / 50%), 0 0 3px rgb(238 238 238 / 25%), 0 0 6px #b90d0d;
+    text-shadow: 0 0 15px rgb(185 13 13 / 50%), 0 0 3px rgb(238 238 238 / 25%), 0 0 6px #ed3e3e;
 }
 .ctm-heading p{
     color:#fff;

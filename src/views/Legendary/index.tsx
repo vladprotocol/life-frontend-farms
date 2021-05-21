@@ -53,7 +53,7 @@ const Nft = () => {
     <NftProvider>
       <Page>
         <StyledHero>
-          <Heading as="h1" size="xxl" color="#9f0d0d" mb="24px">
+          <Heading as="h1" size="xl" color="#9f0d0d" mb="24px">
             Legendary NFTs
           </Heading>
           <Heading as="h2" size="lg" color="#9f0d0d">

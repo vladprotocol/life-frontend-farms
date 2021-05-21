@@ -70,7 +70,7 @@ const Farm: React.FC = () => {
     <Page>
       <Hero>
         <div>
-          <Heading as="h1" size="xxl" mb="16px" color="#9f0d0d">
+          <Heading as="h1" size="xl" mb="16px" color="#9f0d0d">
             {TranslateString(282, 'External Pools')}
           </Heading>
         </div>

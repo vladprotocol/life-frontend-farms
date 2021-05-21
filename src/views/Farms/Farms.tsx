@@ -98,7 +98,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   return (
     <Page>
-      <Heading as="h1" size="xxl" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+      <Heading as="h1" size="xl" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         LIFE FARMING HAS ENDED
       </Heading>
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>

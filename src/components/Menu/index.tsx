@@ -247,7 +247,7 @@ const Menu = (props) => {
               <li>
                 <div className="btn-wrap">
                   <span className="btn-first">
-                    <a href="https://vlad.finance" target="_blank" rel="noreferrer"><img src={alifeLogo} className="" alt="" />$1.66</a>
+                    <a href="https://vlad.finance" target="_blank" rel="noreferrer"><img src={alifeLogo} className="" alt="" />$0.00</a>
                   </span>
                   <span className="btn-second">
                     <img className="disable-btn" src={bscscanLogo} alt="" />

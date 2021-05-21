@@ -1206,9 +1206,9 @@ footer{
     .footer-sm ul {
         margin-top: 0;
     }
-    li{
+    /* li{
         line-height: 40px;
-    }
+    } */
     .navbarshow{
     padding: 15px;
     text-align: center;

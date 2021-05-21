@@ -7,7 +7,12 @@ import useTheme from 'hooks/useTheme'
 import { usePriceCakeBusd } from 'state/hooks'
 import { Menu as UikitMenu, Button } from '@pancakeswap-libs/uikit'
 import config from './config'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
+// import './innerpage.css'
+import './main.css'
+// import './nftfactstyle.css'
+// import './owl.css'
 import bscscanLogo from './bscan.png'
 import pancakeLogo from './pancake1.png'
 import telegramLogo from './telegram.svg'
@@ -188,7 +193,7 @@ const Menu = (props) => {
   return (
     <div className="body-bg">
       <section className="topsmnav-bg mb-4">
-        <div className="container-wrap">
+        <div className="container-wrap1">
           <div className="tp-sm-wrap">
             <div className="tp-vlad">
               <ul>
@@ -269,46 +274,116 @@ const Menu = (props) => {
           {...props}
         />
       </Container>
-      <Footer>
-        <SocialFooter>
-          <SocialFooterLink link="https://t.me/VladFinanceOfficial" src={telegramLogo} alt="Telegram" />
-          <SocialFooterLink link="https://vlad-finance.medium.com" src={mediumLogo} alt="Medium" />
-          <SocialFooterLink link="https://twitter.com/VladFinance" src={twitterLogo} alt="Twitter" />
-          <SocialFooterLink
-            link="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
-            src={vladLogo}
-            alt="Vlad Token"
-          />
-          <SocialFooterLink
-            link="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
-            src={lifeLogo}
-            alt="Life Token"
-          />
-          <SocialFooterLink
-            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
-            src={pancakeLogo}
-            alt="Buy Vlad"
-          />
-          <SocialFooterLink
-            link="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae"
-            src={pancakeLogo}
-            alt="Buy Life"
-          />
-        </SocialFooter>
-        <Logo src={vladLogo} alt="vlad.finance" />
-        <LiveLinkGroup>
-          <RankingLink link="https://www.coingecko.com/en/coins/vlad-finance" name="CoinGecko" />
-          <RankingLink
-            link="https://goswappcharts.web.app/?isbsc=true&tokenId=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
-            name="GoSwapp"
-          />
-          <RankingLink link="https://nomics.com/assets/vlad-vlad-finance" name="Nomics" />
-          <RankingLink link="https://www.livecoinwatch.com/price/VladFinance-VLAD" name="LiveCoinWatch" />
-          <RankingLink link="https://coinmarketcap.com/currencies/vlad-finance" name="CoinMarketCap" />
-        </LiveLinkGroup>
-        <FooterCopyRight>© Vlad Finance. All Rights Reserved</FooterCopyRight>
-      </Footer>
-    </div>
+      <footer>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12 col-md-3 footer-logoblock">
+                        <ul className="footer-logo">
+                            <li><a href="https://vlad.finance" target="_blank" rel="noreferrer"><img src={vladLogo} className="img-fluid"
+                                        alt="Vlad Finance" /></a></li>
+                        </ul>
+                        <h4>Vlad.Finance</h4>
+                        <p>Come for the Immortality. <br /> Stay for the NFTs.</p>
+                        <ul className="footermenu">
+                            <li><a href="https://vlad.finance/token-facts" target="_blank" rel="noreferrer">TOKEN FACTS</a></li>
+                            <li><a href="https://vlad.finance/nft" target="_blank" rel="noreferrer">NFTs</a></li>
+                            <li><a href="https://vlad.finance/team" target="_blank" rel="noreferrer">TEAM</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-sm-12 col-md-9 footer-sm">
+                        <div className="row">
+                            <div className="col-sm-12 col-md-3">
+                                <h6>COMMUNITY</h6>
+                                <ul>
+                                    <li><a href="https://t.me/VladFinanceOfficial" target="_blank" rel="noreferrer"><img
+                                                src={telegramLogo} className="img-fluid"
+                                                alt="" /><span>Telegram</span></a></li>
+                                    <li><a href="https://vlad-finance.medium.com/" target="_blank" rel="noreferrer"><img
+                                                src={mediumLogo} className="img-fluid"
+                                                alt="" />Medium</a></li>
+                                    <li><a href="https://twitter.com/VladFinance" target="_blank" rel="noreferrer"><img
+                                                src={twitterLogo} className="img-fluid"
+                                                alt="" />Twitter</a></li>
+                                </ul>
+                            </div>
+                            <div className="col-sm-12 col-md-3">
+                                <h6>$VLAD</h6>
+                                <ul>
+                                    <li><a href="https://bscscan.com/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                            target="_blank" rel="noreferrer"><img src="../images/fbscscanlogo.svg" className="img-fluid"
+                                                alt="" />BSCScan</a></li>
+                                    <li><a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                            target="_blank" rel="noreferrer"><img src="../images/fpancakeswap.svg" className="img-fluid"
+                                                alt="" />Buy $VLAD</a></li>
+                                    <li><a href="https://dex.guru/token/0x279d41f3f78fe5c1f0ba41ae963d6e545113c973-bsc"
+                                            target="_blank" rel="noreferrer"><img src="../images/dexguru.png" className="img-fluid"
+                                                alt="" />DexGuru</a></li>
+                                    <li><a href="https://www.coingecko.com/en/coins/vlad-finance" target="_blank" rel="noreferrer"><img
+                                                src="../images/fcoingecko.svg" className="img-fluid"
+                                                alt="" />CoinGecko</a></li>
+                                    <li><a href="https://coinmarketcap.com/currencies/vlad-finance/"
+                                            target="_blank" rel="noreferrer"><img src="../images/fcoinmarketcap.svg"
+                                            className="img-fluid" alt="" />CoinMarketCap</a></li>
+                                    <li><a href="https://goswappcharts.web.app/?isbsc=true&tokenId=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973"
+                                            target="_blank" rel="noreferrer"><img src="../images/fgoswapp.svg" className="img-fluid"
+                                                alt="" />GoSwapp</a></li>
+                                    <li><a href="https://nomics.com/assets/vlad-vlad-finance" target="_blank" rel="noreferrer"><img
+                                                src="../images/fnomics.svg" className="img-fluid" alt="" />Nomics</a></li>
+                                    <li><a href="https://www.livecoinwatch.com/price/VladFinance-VLAD"
+                                            target="_blank" rel="noreferrer"><img src="../images/fLiveCoinWatch.svg"
+                                            className="img-fluid" alt="" />LiveCoinWatch</a></li>
+                                </ul>
+                            </div>
+                            <div className="col-sm-12 col-md-3">
+                                <h6>$LIFE</h6>
+                                <ul>
+                                    <li><a href="https://bscscan.com/token/0x50f4220C82c9325dC99f729C3328FB5c338BEaae" target="_blank" rel="noreferrer"><img src="../images/fbscscanlogo.svg" className="img-fluid" alt="" />BSCScan</a></li>
+                                    <li><a href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x50f4220C82c9325dC99f729C3328FB5c338BEaae" target="_blank" rel="noreferrer"><img src="../images/fpancakeswap.svg" className="img-fluid" alt="" />Buy $LIFE</a></li>
+                                    <li><a href="https://dex.guru/token/0x50f4220c82c9325dc99f729c3328fb5c338beaae-bsc"
+                                      target="_blank" rel="noreferrer"><img src="../images/dexguru.png" className="img-fluid" alt="" />DexGuru</a></li>
+                                    <li><a href="https://goswappcharts.web.app/?isbsc=true&tokenId=0x50f4220C82c9325dC99f729C3328FB5c338BEaae" target="_blank" rel="noreferrer"><img src="../images/fgoswapp.svg" className="img-fluid" alt="goswapp" />GoSwapp</a></li>
+                                    <li className="fdeactive"><img src="../images/fcoinmarketcap.svg" className="img-fluid"
+                                            alt="" />CoinMarketCap</li>
+                                    <li className="fdeactive"><img src="../images/fcoingecko.svg" className="img-fluid"
+                                            alt="" />CoinGecko</li>
+                                    <li className="fdeactive"><img src="../images/fnomics.svg" className="img-fluid"
+                                            alt="" />Nomics</li>
+                                    <li className="fdeactive"><img src="../images/fLiveCoinWatch.svg" className="img-fluid"
+                                          alt="" />LiveCoinWatch</li>
+                                </ul>
+                            </div>
+                            <div className="col-sm-12 col-md-3">
+                                <h6>$aLIFE</h6>
+                                <ul>
+                                    <li className="fdeactive"><img src="../images/fbscscanlogo.svg" className="img-fluid"
+                                            alt="" />BSCScan</li>
+                                    <li className="fdeactive"><img src="../images/fpancakeswap.svg" className="img-fluid"
+                                            alt="" />Buy $VLAD</li>
+                                    <li className="fdeactive"><img src="../images/dexguru.png" className="img-fluid"
+                                            alt="" />DexGuru</li>
+                                    <li className="fdeactive"><img src="../images/fcoingecko.svg" className="img-fluid"
+                                            alt="" />CoinGecko</li>
+                                    <li className="fdeactive"><img src="../images/fcoinmarketcap.svg" className="img-fluid"
+                                            alt="" />CoinMarketCap</li>
+                                    <li className="fdeactive"><img src="../images/fgoswapp.svg" className="img-fluid"
+                                            alt="GoSwapp" />GoSwapp</li>
+                                    <li className="fdeactive"><img src="../images/fnomics.svg" className="img-fluid"
+                                            alt="" />Nomics</li>
+                                    <li className="fdeactive"><img src="../images/fLiveCoinWatch.svg" className="img-fluid"
+                                            alt="" />LiveCoinWatch</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-12 col-md-12 fo-copyright">
+                        &copy; Vlad Finance.All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+      </div>
   )
 }
 

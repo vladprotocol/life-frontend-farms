@@ -52,10 +52,16 @@ audio {
     max-width: 1140px;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
 }
 ul, li, a {
     list-style: none;
     text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color: unset;
 }
 .topsmnav-bg{
     position: fixed;
@@ -65,7 +71,7 @@ ul, li, a {
     top: -40px;
     padding: 8px 0;
 }
-.container-wrap{
+.container-wrap1{
     width:98%;
     margin:0 auto;
 }

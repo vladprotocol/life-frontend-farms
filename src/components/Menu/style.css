@@ -177,6 +177,8 @@ a:hover {
  .btn-first {
     display: flex;
     align-items: center;
+    color:#fff;
+    font-size: 14px;
 }
  .btn-first a, .btn-second a{
      display: flex;

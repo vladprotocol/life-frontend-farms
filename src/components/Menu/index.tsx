@@ -144,8 +144,8 @@ const CustomI = styled.i`
   margin-right: 10px;
 `
 
-let vladValue = 0;
-let lifeValue = 0;
+let vladValue = '0.00';
+let lifeValue = '0.00';
 
 fetch('https://api.vlad.finance/price.php?key=6547643&pool=0x60d5e86c0074b56e52a7540b3bf36c399e9f3038&token=0x279d41f3f78fe5c1f0ba41ae963d6e545113c973&decimals=8')
   .then((res) => res.json())
@@ -154,14 +154,14 @@ fetch('https://api.vlad.finance/price.php?key=6547643&pool=0x60d5e86c0074b56e52a
       if (result.status === true) {
         vladValue = result.data
       } else {
-        vladValue = 0
+        vladValue = '0.00'
       }
     },
     (error) => {
-      vladValue = 0
+      vladValue = '0.00'
     },
   ).catch(() => {
-    vladValue = 0
+    vladValue = '0.00'
   }
   );
 
@@ -172,14 +172,14 @@ fetch('https://api.vlad.finance/price.php?key=6547643&pool=0x5ee167b75118125e7d4
       if (result.status === true) {
         lifeValue = result.data
       } else {
-        lifeValue = 0
+        lifeValue = '0.00'
       }
     },
     (error) => {
-      lifeValue = 0
+      lifeValue = '0.00'
     },
   ).catch(() => {
-    lifeValue = 0
+    lifeValue = '0.00'
   }
   );
 
@@ -255,6 +255,7 @@ const Menu = (props) => {
               <li>
                 <div className="btn-wrap">
                   <span className="btn-first">
+                    u
                     <img src={alifeLogo} className="" alt="" />$0.00
                   </span>
                   <span className="btn-second">

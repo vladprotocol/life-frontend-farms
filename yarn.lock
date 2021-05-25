@@ -1932,7 +1932,7 @@
 
 "@pancakeswap-libs/uikit@vladprotocol/vlad-uikit":
   version "0.10.2"
-  resolved "https://codeload.github.com/vladprotocol/vlad-uikit/tar.gz/b247260ae3f5538200746af99e2c4847a05f4058"
+  resolved "https://codeload.github.com/vladprotocol/vlad-uikit/tar.gz/dda8457210ab4ef40d0124dcd797a9197ca30174"
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

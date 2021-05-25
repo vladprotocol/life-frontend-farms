@@ -20,7 +20,7 @@ import twitterLogo from './twitter.svg'
 import mediumLogo from './medium.svg'
 import vladLogo from './vlad-circle.png'
 import lifeLogo from './life.png'
-import alifeLogo from './alife.svg'
+import alifeLogo from './alife.png'
 import bgFooter from './bg-footer.jpg'
 import soundCloudLogo from './soundcloud.png'
 

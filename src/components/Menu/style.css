@@ -26,7 +26,7 @@ nav {
 
 nav ~ div > div:nth-child(1) {
 	position: relative!important;
-	height: 130vh;
+	height: 150vh;
 }
 
 

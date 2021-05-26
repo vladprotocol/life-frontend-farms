@@ -161,10 +161,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
       getLPprice().then((data) => {
         setLiquidity(new BigNumber(data[pair].liquidity))
 
-        console.log('pairData:', data[pair])
+        // console.log('pairData:', data[pair])
 
-        console.log('reserve0:', reserve0.toString())
-        console.log('reserve1:', reserve1.toString())
+        // console.log('reserve0:', reserve0.toString())
+        // console.log('reserve1:', reserve1.toString())
 
         const baseValue = new BigNumber(token0price).times(reserve0)
         const quoteValue = new BigNumber(token1price).times(reserve1)
@@ -172,14 +172,14 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         const totalValue = baseValue.plus(quoteValue)
         const lpTokenPrice = totalValue.div(getBalanceNumber(totalSupply))
 
-        console.log('totalSupply:', getBalanceNumber(totalSupply).toString())
-        console.log('token0price:', token0price.toString())
-        console.log('token1price:', token1price.toString())
+        // console.log('totalSupply:', getBalanceNumber(totalSupply).toString())
+        // console.log('token0price:', token0price.toString())
+        // console.log('token1price:', token1price.toString())
 
-        console.log('baseValue:', baseValue.toString())
-        console.log('quoteValue:', quoteValue.toString())
-        console.log('totalValue:', totalValue.toString())
-        console.log('lpTokenPrice:', lpTokenPrice.toString())
+        // console.log('baseValue:', baseValue.toString())
+        // console.log('quoteValue:', quoteValue.toString())
+        // console.log('totalValue:', totalValue.toString())
+        // console.log('lpTokenPrice:', lpTokenPrice.toString())
 
         const apr = getPoolApr(
           lpTokenPrice,
@@ -188,7 +188,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
           parseFloat(pool.tokenPerBlock),
         )
         setAPY(new BigNumber(apr))
-        console.log('APR:', apr)
+        // console.log('APR:', apr)
       })
     }
   }, [token0, token1, token0price, token1price, totalSupply, pool, rewardTokenPrice, reserve0, reserve1])

@@ -59,7 +59,7 @@ export const useNftAllowance = (tokenContract: Contract, spenderAddress: string,
         const res = await tokenContract.methods.allowance(account, spenderAddress).call()
         setAllowance(new BigNumber(res))
       } catch (e) {
-        console.log(e.toString())
+        // console.log(e.toString())
         setAllowance(null)
       }
     }

@@ -204,7 +204,7 @@ const Menu = (props) => {
               <div className="tp-inner">
                 <span>Listen to DJ Ezra - Live From $VLADHalla</span>
                 <audio controls>
-                  <source src="./dj-erza.mp3" type="audio/mpeg" />
+                  <source src="/dj-erza.mp3" type="audio/mpeg" />
                   <track kind="captions" />
 
                 </audio>

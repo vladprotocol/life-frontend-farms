@@ -105,17 +105,17 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
 
   const loggedIn = account !== null
 
-  console.log('?hasClaimed', hasClaimed)
+  // console.log('?hasClaimed', hasClaimed)
   // console.log('?ownerById', ownerById)
 
   const nftIndex = hasClaimed && hasClaimed.indexOf(nftId)
 
-  console.log('nftId', nftId)
-  console.log('nftIndex', nftIndex)
+  // console.log('nftId', nftId)
+  // console.log('nftIndex', nftIndex)
 
   const MINTS = myMints[nftIndex] || 0
 
-  console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
+  // console.log(nftId, '?myMints', myMints, 'MINTS', MINTS)
 
   // not sure about this, you need to check if this oser own this nft in the view nft page.
   const youAreTheLastOwner = ownerById && ownerById[nftIndex] && ownerById[nftIndex].toString() === account.toString()
